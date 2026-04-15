@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jasa Titip Beli - Jastipinaja.cn</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="Logo" class="nav-logo" /></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home Page</a></li>
+        <li class="dropdown">
+          <a href="index.html#services" class="dropbtn">Our Services ▾</a>
+          <div class="dropdown-content">
+            <a href="checkout.html">Jasa titip beli/checkout</a>
+            <a href="forwarding.html">Jasa Kirim/Forwarding</a>
+            <a href="topup.html">Jasa top up Alipay/CNY</a>
+          </div>
+        </li>
+        <li><a href="contact.html" class="nav-contact-btn">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <header class="hero" style="padding: 60px 20px">
+      <h1>Jasa Titip Beli & Kirim (All-In)</h1>
+      <p>Cara termudah belanja dari China tanpa ribet urus pajak dan beacukai.</p>
+    </header>
+
+    <section class="checkout-section">
+      <h2 class="section-title">Cara Order</h2>
+      <div class="roadmap-container">
+        <div class="roadmap-step">
+          <div class="roadmap-circle">1</div>
+          <div class="roadmap-content">
+            <h3>Kirim Link / Foto Produk</h3>
+            <p>
+              Silakan kirim link produk (Taobao, 1688, Pinduoduo, dll) atau foto barang yang ingin dicari ke Admin kami.
+            </p>
+          </div>
+        </div>
+
+        <div class="roadmap-step">
+          <div class="roadmap-circle">2</div>
+          <div class="roadmap-content">
+            <h3>Totalan & Pembayaran</h3>
+            <p>Admin akan menghitung total biaya sesuai skema harga. Setelah deal, lakukan pembayaran harga barang.</p>
+          </div>
+        </div>
+
+        <div class="roadmap-step">
+          <div class="roadmap-circle">3</div>
+          <div class="roadmap-content">
+            <h3>Pilih Metode Kirim</h3>
+            <p>Pilih opsi pengiriman: <strong>Handcarry</strong> (Cepat) atau <strong>Kargo</strong> (Hemat).</p>
+          </div>
+        </div>
+
+        <div class="roadmap-step">
+          <div class="roadmap-circle">4</div>
+          <div class="roadmap-content">
+            <h3>Terima Beres ✅</h3>
+            <p>Kami urus checkout, penerimaan di gudang China, hingga pengiriman sampai ke alamat Anda di Indonesia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section">
+      <h2 class="section-title">Skema Harga (Jasa Beli)</h2>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h4>Tier 1</h4>
+          <div class="price-value">&lt; 1000¥</div>
+          <p>Harga Barang x Kurs 2500</p>
+          <div class="fee-tag">+ Fee 15%</div>
+        </div>
+        <div class="price-card featured">
+          <h4>Tier 2</h4>
+          <div class="price-value">1000¥ - 5000¥</div>
+          <p>Harga Barang x Kurs 2500</p>
+          <div class="fee-tag">+ Fee 10%</div>
+        </div>
+        <div class="price-card">
+          <h4>Tier 3</h4>
+          <div class="price-value">&gt; 5000¥</div>
+          <p>Harga Barang x Kurs 2500</p>
+          <div class="fee-tag">+ Fee 5%</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shipping-section">
+      <h2 class="section-title">Skema Harga Kirim</h2>
+      <p style="text-align: center; color: #ff4757; font-weight: bold; margin-bottom: 30px">
+        ‼️ Harga Kirim Sudah All-In Tax & Beacukai
+      </p>
+      <div class="shipping-grid">
+        <div class="ship-box">
+          <h3>Handcarry 🧳</h3>
+          <span class="eta">2-5 Hari Sampai</span>
+          <span class="rate">Rp 275.000 / Kg</span>
+        </div>
+        <div class="ship-box">
+          <h3>Air Freight ✈️</h3>
+          <span class="eta">5-10 Hari Sampai</span>
+          <span class="rate">Rp 220.000 / Kg</span>
+        </div>
+        <div class="ship-box">
+          <h3>Sea Cargo 🛳️</h3>
+          <span class="eta">3-5 Minggu Sampai</span>
+          <span class="rate">Rp 120.000 / Kg</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="calculator-section">
+      <h2 class="section-title">Estimasi Biaya</h2>
+      <div class="calculator-card">
+        <div class="calc-inputs">
+          <div class="form-group">
+            <label>Harga Barang (RMB/¥)</label>
+            <input type="number" id="calc-rmb" placeholder="Contoh: 1500" oninput="calculateJastip()" />
+          </div>
+          <div class="form-group">
+            <label>Berat Barang (Kg)</label>
+            <input type="number" id="calc-kg" placeholder="Contoh: 2" oninput="calculateJastip()" />
+          </div>
+          <div class="form-group">
+            <label>Metode Kirim</label>
+            <select id="calc-method" onchange="calculateJastip()">
+              <option value="275000">Handcarry (Rp 275rb/kg)</option>
+              <option value="220000">Air Freight (Rp 220rb/kg)</option>
+              <option value="120000">Sea Cargo (Rp 120rb/kg)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="calc-results">
+          <div class="result-item">
+            <span>Fee Jastip:</span>
+            <strong id="res-fee">Rp 0</strong>
+          </div>
+          <div class="result-item">
+            <span>Estimasi Ongkir:</span>
+            <strong id="res-ongkir">Rp 0</strong>
+          </div>
+          <div class="result-total">
+            <span>Total Estimasi:</span>
+            <h2 id="res-total">Rp 0</h2>
+          </div>
+          <p class="calc-note">*Kurs fix Rp 2.500. Harga akhir akan dikonfirmasi Admin.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <a href="contact.html" class="whatsapp-btn">Sudah ada Link/Foto? Chat Admin Sekarang</a>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>

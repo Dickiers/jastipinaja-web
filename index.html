@@ -8,20 +8,23 @@
 </head>
 <body>
 
-    <nav class="navbar">
+<nav class="navbar">
         <div class="logo">
-            <img src="logo.png" alt="Jastipinaja Logo" class="nav-logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Jastipinaja Logo" class="nav-logo">
+            </a>
         </div>
         <ul class="nav-links">
-            <li><a href="#">Home Page</a></li>
+            <li><a href="index.html">Home Page</a></li>
             <li class="dropdown">
                 <a href="#services" class="dropbtn">Our Services ▾</a>
                 <div class="dropdown-content">
-                    <a href="#">Jasa titip beli/checkout</a>
-                    <a href="#">Jasa Kirim/Forwarding</a>
-                    <a href="#">Jasa top up Alipay/CNY</a>
+                    <a href="checkout.html">Jasa titip beli/checkout</a>
+                    <a href="forwarding.html">Jasa Kirim/Forwarding</a>
+                    <a href="topup.html">Jasa top up Alipay/CNY</a>
                 </div>
             </li>
+            <li><a href="contact.html" class="nav-contact-btn">Contact Us</a></li>
         </ul>
     </nav>
 
@@ -61,11 +64,15 @@
 
     </section>
 
-    <section class="cta-section">
+    <section id="contact" class="cta-section">
         <h2>Ready to Order?</h2>
         <p>Hubungi kami langsung melalui WhatsApp untuk konsultasi dan pemesanan.</p>
         <a href="https://wa.me/6281234567890" class="whatsapp-btn">Chat on WhatsApp</a>
     </section>
+
+    <a href="https://wa.me/6281234567890?text=Halo%20Jastipinajacn,%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda" class="floating-wa-btn" target="_blank">
+        <img src="whatsapp_logo.png" alt="Chat WhatsApp">
+    </a>
 
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Top Up Alipay/CNY - Jastipinaja.cn</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="initTopupPage()">
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="Logo" class="nav-logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home Page</a></li>
+            <li class="dropdown">
+                <a href="index.html#services" class="dropbtn">Our Services ▾</a>
+                <div class="dropdown-content">
+                    <a href="checkout.html">Jasa titip beli/checkout</a>
+                    <a href="forwarding.html">Jasa Kirim/Forwarding</a>
+                    <a href="topup.html">Jasa top up Alipay/CNY</a>
+                </div>
+            </li>
+            <li><a href="contact.html" class="nav-contact-btn">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" style="padding: 60px 20px;">
+        <h1>Jasa Top Up & Bayar Supplier</h1>
+        <p>Isi saldo Alipay, WeChat Pay, atau bayar supplier China dengan rate transparan dan proses instan.</p>
+    </header>
+
+    <section style="text-align: center; padding: 40px 20px 0;">
+        <div class="live-rate-box">
+            <span>Live Rate Jastipinaja Hari Ini (1 RMB)</span>
+            <h2 id="display-live-rate">Memuat Rate...</h2> 
+        </div>
+        
+        <div class="promo-banner">
+            🎁 PROMO: Transaksi Pertama <strong>BEBAS ADMIN FEE!</strong>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <h2 class="section-title">Biaya Layanan (Service Fee)</h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h4>Transaksi Kecil</h4>
+                <div class="price-value">&lt; 100 RMB</div>
+                <div class="fee-tag" style="background: #ffeaa7; color: #d35400;">Fee 10%</div>
+            </div>
+            <div class="price-card featured">
+                <h4>Transaksi Menengah</h4>
+                <div class="price-value">100 - 999 RMB</div>
+                <div class="fee-tag">+ Fee 2%</div>
+            </div>
+            <div class="price-card" style="border: 2px solid #2ecc71;">
+                <h4>Transaksi Besar</h4>
+                <div class="price-value">&ge; 1.000 RMB</div>
+                <div class="fee-tag" style="background: #2ecc71; color: white;">GRATIS FEE (0%)</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="calculator-section" style="margin-top: 20px;">
+        <h2 class="section-title">Kalkulator Top Up</h2>
+        <div class="calculator-card">
+            <div class="calc-inputs">
+                <div class="form-group">
+                    <label>Nominal Top Up (RMB/¥)</label>
+                    <input type="number" id="topup-rmb" placeholder="Contoh: 500" oninput="calculateTopup()">
+                </div>
+            </div>
+
+            <div class="calc-results">
+                <div class="result-item">
+                    <span>Rate Digunakan:</span>
+                    <strong id="res-topup-rate">-</strong>
+                </div>
+                <div class="result-item">
+                    <span>Service Fee:</span>
+                    <strong id="res-topup-fee">-</strong>
+                </div>
+                <div class="result-total">
+                    <span>Total Harus Ditransfer:</span>
+                    <h2 id="res-topup-total">Rp 0</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="checkout-section">
+        <h2 class="section-title">Cara Transaksi</h2>
+        <div class="roadmap-container">
+            <div class="roadmap-step">
+                <div class="roadmap-circle">1</div>
+                <div class="roadmap-content">
+                    <h3>Cek Totalan</h3>
+                    <p>Gunakan kalkulator di atas untuk melihat estimasi, atau infokan nominal ke Admin untuk totalan pastinya.</p>
+                </div>
+            </div>
+            <div class="roadmap-step">
+                <div class="roadmap-circle">2</div>
+                <div class="roadmap-content">
+                    <h3>Kirim Data Tujuan</h3>
+                    <p>Kirim QR Code (Alipay/WeChat) atau detail Rekening Bank China tujuan Anda ke WhatsApp kami.</p>
+                </div>
+            </div>
+            <div class="roadmap-step">
+                <div class="roadmap-circle">3</div>
+                <div class="roadmap-content">
+                    <h3>Transfer Rupiah</h3>
+                    <p>Silakan transfer total IDR sesuai perhitungan ke rekening BCA resmi Jastipinaja.</p>
+                </div>
+            </div>
+            <div class="roadmap-step">
+                <div class="roadmap-circle">4</div>
+                <div class="roadmap-content">
+                    <h3>Proses Instant ⚡</h3>
+                    <p>Setelah dana masuk, RMB langsung kami transfer. Bukti transfer akan dikirim sebagai konfirmasi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+        <h2>Mau Top Up Berapa RMB Sekarang?</h2>
+        <p>Chat admin untuk eksekusi transaksi atau klaim promo transaksi pertama Anda.</p>
+        <a href="contact.html" class="whatsapp-btn">Chat Admin Sekarang</a>
+    </section>
+
+    <a href="https://wa.me/6281234567890" class="floating-wa-btn" target="_blank">
+        <img src="whatsapp_logo.png" alt="Chat WhatsApp">
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Jastipinaja.cn</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.png" alt="Jastipinaja Logo" class="nav-logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home Page</a></li>
+            <li class="dropdown">
+                <a href="index.html#services" class="dropbtn">Our Services ▾</a>
+                <div class="dropdown-content">
+                    <a href="checkout.html">Jasa titip beli/checkout</a>
+                    <a href="forwarding.html">Jasa Kirim/Forwarding</a>
+                    <a href="topup.html">Jasa top up Alipay/CNY</a>
+                </div>
+            </li>
+            <li><a href="contact.html" class="nav-contact-btn">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" style="padding: 60px 20px;">
+        <h1 style="font-size: 2.5rem;">Hubungi Kami</h1>
+        <p>Ada pertanyaan? Silakan isi form di bawah ini dan kami akan segera membalas via WhatsApp.</p>
+    </header>
+
+    <section class="contact-page-container">
+        <div class="contact-form-card">
+            
+            <div class="form-group">
+                <label for="contact-layanan">Saya ingin bertanya tentang:</label>
+                <select id="contact-layanan">
+                    <option value="Jasa titip beli/checkout">Jasa titip beli/checkout</option>
+                    <option value="Jasa Kirim/Forwarding">Jasa Kirim/Forwarding</option>
+                    <option value="Jasa top up Alipay/CNY">Jasa top up Alipay/CNY</option>
+                    <option value="Layanan Lainnya">Layanan Lainnya</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="contact-nama">Nama Anda (Opsional):</label>
+                <input type="text" id="contact-nama" placeholder="Ketik nama Anda di sini...">
+            </div>
+
+            <div class="form-group">
+                <label for="contact-pesan">Detail Pertanyaan (Opsional):</label>
+                <textarea id="contact-pesan" rows="5" placeholder="Ceritakan lebih detail apa yang ingin Anda tanyakan atau butuhkan..."></textarea>
+            </div>
+
+            <button onclick="sendContactForm()" class="whatsapp-btn form-submit-btn">Kirim ke WhatsApp</button>
+        </div>
+    </section>
+
+    <a href="https://wa.me/6281234567890?text=Halo%20Jastipinajacn,%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda" class="floating-wa-btn" target="_blank">
+        <img src="whatsapp_logo.png" alt="Chat WhatsApp">
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
