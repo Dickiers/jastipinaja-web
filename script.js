@@ -124,3 +124,70 @@ function calculateTopup() {
     document.getElementById('res-topup-fee').innerText = "Rp " + Math.round(serviceFeeIDR).toLocaleString('id-ID') + ` (${feePercent * 100}%)`;
     document.getElementById('res-topup-total').innerText = "Rp " + Math.round(grandTotal).toLocaleString('id-ID');
 }
+
+// --- HERO CAROUSEL LOGIC ---
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track');
+    
+    // Only run this if we are actually on the homepage
+    if (!track) return; 
+
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.next-btn');
+    const prevButton = document.querySelector('.prev-btn');
+    const dotsNav = document.querySelector('.carousel-nav');
+    const dots = Array.from(dotsNav.children);
+
+    let currentIndex = 0;
+    let slideInterval;
+
+    // The function that does the moving
+    function moveToSlide(index) {
+        // If we go past the end, loop back to the beginning
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+
+        // Move the track by 100% of the screen width for each slide
+        track.style.transform = `translateX(-${index * 100}%)`;
+        
+        // Update the white dot
+        dots.forEach(dot => dot.classList.remove('current-indicator'));
+        dots[index].classList.add('current-indicator');
+
+        currentIndex = index;
+    }
+
+    // Listen for arrow clicks
+    nextButton.addEventListener('click', () => {
+        moveToSlide(currentIndex + 1);
+        resetInterval(); // Restart the 5-second timer when user clicks
+    });
+
+    prevButton.addEventListener('click', () => {
+        moveToSlide(currentIndex - 1);
+        resetInterval();
+    });
+
+    // Listen for dot clicks
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            moveToSlide(index);
+            resetInterval();
+        });
+    });
+
+    // Auto-Slide function (Every 5 seconds)
+    function startInterval() {
+        slideInterval = setInterval(() => {
+            moveToSlide(currentIndex + 1);
+        }, 5000); 
+    }
+
+    function resetInterval() {
+        clearInterval(slideInterval);
+        startInterval();
+    }
+
+    // Start the engine!
+    startInterval();
+});

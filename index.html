@@ -10,7 +10,13 @@
 <body>
 
 <nav class="navbar">
-<ul class="nav-links">
+        <div class="logo">
+            <a href="index">
+                <img src="logo.png" alt="Jastipinaja Logo" class="nav-logo">
+            </a>
+        </div>
+        
+        <ul class="nav-links">
             <li><a href="index">Home Page</a></li>
             <li class="dropdown">
                 <a href="index#services" class="dropbtn">Our Services ▾</a>
@@ -24,9 +30,45 @@
         </ul>
     </nav>
 
-    <header class="hero">
-        <h1>Jastipinaja.cn</h1>
-        <p>Solusi terpercaya dan praktis untuk segala kebutuhan impor barang Anda dari China ke Indonesia. Kami mempermudah proses belanja, pengiriman, dan pembayaran antar negara.</p>
+<header class="hero-carousel">
+        <div class="carousel-track-container">
+            <ul class="carousel-track">
+                
+                <li class="carousel-slide">
+                    <div class="slide-content">
+                        <h1>Jastipinaja.cn</h1>
+                        <p>Solusi terpercaya dan praktis untuk segala kebutuhan impor barang Anda dari China ke Indonesia. Kami mempermudah proses belanja, pengiriman, dan pembayaran antar negara.</p>
+                        <a href="#services" class="hero-btn" style="background-color: #f0f4f8; color: #0056b3;">Lihat Layanan Kami</a>
+                    </div>
+                </li>
+                
+                <li class="carousel-slide">
+                    <div class="slide-content">
+                        <h1>Impor Barang China 100% Aman</h1>
+                        <p>Dari Taobao, 1688, hingga Pinduoduo. Kami urus semua dari proses negosiasi, checkout, sampai barang tiba di depan pintu Anda. All-In Tax & Bea Cukai.</p>
+                        <a href="checkout" class="hero-btn">Mulai Belanja</a>
+                    </div>
+                </li>
+                
+                <li class="carousel-slide">
+                    <div class="slide-content">
+                        <h1>Top Up RMB & Bayar Supplier</h1>
+                        <p>Isi saldo Alipay, WeChat Pay, atau transfer langsung ke rekening bank China. Transaksi instan dengan rate transparan.</p>
+                        <a href="topup" class="hero-btn">Cek Rate Hari Ini</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        
+        <button class="carousel-btn prev-btn">&#10094;</button>
+        <button class="carousel-btn next-btn">&#10095;</button>
+        
+        <div class="carousel-nav">
+            <button class="carousel-indicator current-indicator"></button>
+            <button class="carousel-indicator"></button>
+            <button class="carousel-indicator"></button>
+        </div>
     </header>
 
 <section id="services" class="services-container">
