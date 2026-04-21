@@ -191,3 +191,82 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start the engine!
     startInterval();
 });
+
+// --- FAQ ACCORDION LOGIC ---
+document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            const isActive = item.classList.contains('active');
+
+            // Optional: Close all other open FAQ boxes when one is clicked
+            document.querySelectorAll('.faq-item').forEach(otherItem => {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.faq-answer').style.maxHeight = null;
+            });
+
+            // If it wasn't already open, open it
+            if (!isActive) {
+                item.classList.add('active');
+                // Set the max-height to the exact pixel height of the inner text
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        });
+    });
+});
+
+// --- CENTER-FOCUS TESTIMONIAL SLIDER ---
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.testi-track');
+    if (!track) return;
+
+    const cards = Array.from(track.children);
+    const btnNext = document.querySelector('.next-testi');
+    const btnPrev = document.querySelector('.prev-testi');
+    
+    let currentIndex = 0;
+
+    function updateTestimonialCarousel() {
+        // Find the exact center of the visible wrapper
+        const containerCenter = track.parentElement.clientWidth / 2;
+        
+        cards.forEach((card, index) => {
+            // Apply the active pop-out effect to the current card
+            if (index === currentIndex) {
+                card.classList.add('active');
+                
+                // Calculate how much to move the track to center this specific card
+                const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
+                const translateValue = containerCenter - cardCenter;
+                
+                track.style.transform = `translateX(${translateValue}px)`;
+            } else {
+                card.classList.remove('active');
+            }
+        });
+    }
+
+    btnNext.addEventListener('click', () => {
+        if (currentIndex < cards.length - 1) {
+            currentIndex++;
+            updateTestimonialCarousel();
+        }
+    });
+
+    btnPrev.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateTestimonialCarousel();
+        }
+    });
+
+    // Run once on load to center the first card
+    // We use setTimeout to ensure CSS has loaded dimensions first
+    setTimeout(updateTestimonialCarousel, 100);
+    
+    // Re-center if user resizes the browser window
+    window.addEventListener('resize', updateTestimonialCarousel);
+});

@@ -132,6 +132,28 @@
     transform: translateY(0);
   }
 
+  /* --- STANDARD HERO SECTION (For Inner Pages like FAQ, Checkout, etc.) --- */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    margin-top: 0;
+    letter-spacing: -0.5px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto; /* This forces the paragraph to center itself */
+    opacity: 0.9;
+}
+
 /* --- HERO CAROUSEL --- */
 .hero-carousel {
     position: relative;
@@ -360,7 +382,7 @@
 /* Section 3 Styles */
 .footer-landscape-img {
     width: 100%;
-    max-width: 300px;
+    max-width: 500px;
     height: auto;
     border-radius: 8px;
     display: block;
@@ -375,6 +397,213 @@
     font-size: 0.9rem;
     color: #888;
 }
+
+/* --- FAQ ACCORDION SECTION --- */
+.faq-section {
+    padding: 60px 20px 80px;
+    background-color: #f4f7f6;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between the rectangles */
+}
+
+.faq-item {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    overflow: hidden; /* Keeps the sliding answer neat */
+    border: 1px solid #eaeaea;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 20px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #f8fcfb;
+}
+
+.faq-icon {
+    font-size: 0.8rem;
+    color: #0056b3;
+    transition: transform 0.4s ease; /* The spin animation */
+}
+
+/* When the item is open, spin the arrow upside down */
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease; /* The silky smooth slide down */
+    background: #f8fcfb;
+}
+
+.faq-answer p {
+    padding: 0 25px 25px;
+    margin: 0;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* --- TESTIMONIAL SECTION --- */
+.testimonial-section {
+    padding: 60px 20px 80px;
+    background-color: #f8f9fa;
+    text-align: center;
+    overflow: hidden; /* Prevents horizontal scrollbar on the whole page */
+}
+
+.rating-summary { margin-bottom: 40px; }
+.rating-summary .stars { color: #f1c40f; font-size: 2rem; letter-spacing: 2px; }
+.rating-score { font-size: 1.5rem; color: #333; margin-top: 5px; }
+
+/* The Center-Focus Slider Layout */
+.testi-wrapper {
+    position: relative;
+    max-width: 100vw;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testi-track-container {
+    width: 100%;
+    max-width: 1200px; /* Limits how far the side cards can spread */
+    overflow: hidden; 
+    position: relative;
+}
+
+.testi-track {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    margin: 0;
+    list-style: none;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth snapping */
+}
+
+/* The Horizontal Landscape Card */
+.testi-card {
+    flex-shrink: 0;
+    width: 650px; /* Wide, horizontal rectangle */
+    height: 320px;
+    position: relative;
+    background: #fff;
+    border-radius: 24px;
+    margin: 0 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    display: flex;
+    transition: all 0.5s ease;
+    
+    /* The "Side Card" state by default */
+    opacity: 0.3; 
+    transform: scale(0.85); 
+    z-index: 1;
+}
+
+/* The "Center Card" state */
+.testi-card.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* The Faded Image on the Right */
+.testi-bg-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%; /* Takes up right half */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 24px 24px 0;
+    
+    /* The Magic Fade: Solid on right, transparent on left */
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+}
+
+/* Placeholder image URLs (Swap with your real ones) */
+.img-testi-1 { background-image: url('testi1.png'); background-color: #a1c4fd; }
+.img-testi-2 { background-image: url('testi2.png'); background-color: #ffecd2; }
+.img-testi-3 { background-image: url('testi3.png'); background-color: #cfd9df; }
+.img-testi-4 { background-image: url('testi4.png'); background-color: #e0c3fc; }
+
+/* Text Content on the Left */
+.testi-content {
+    position: relative;
+    z-index: 2;
+    width: 55%; /* Leaves room for the image on the right */
+    padding: 35px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cust-name { margin: 0 0 5px 0; font-size: 1.4rem; color: #111; }
+.item-name { font-size: 0.9rem; color: #0056b3; font-weight: 600; margin-bottom: 15px; }
+.testi-text { font-size: 0.95rem; color: #555; font-style: italic; margin-bottom: 15px; line-height: 1.5; }
+.testi-nominal { font-size: 0.9rem; color: #666; margin-bottom: 15px; }
+.testi-nominal strong { font-size: 1.1rem; color: #2ecc71; }
+
+.btn-doc {
+    display: inline-block;
+    align-self: flex-start;
+    background: #f0f4f8;
+    color: #0056b3;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.btn-doc:hover { background: #0056b3; color: #fff; }
+
+/* Navigation Arrows sitting on the edges */
+.testi-btn {
+    position: absolute;
+    z-index: 10;
+    background: #fff;
+    border: 2px solid #0056b3;
+    color: #0056b3;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+}
+.testi-btn:hover { background: #0056b3; color: #fff; transform: scale(1.1); }
+.prev-testi { left: 10%; }
+.next-testi { right: 10%; }
 
 /* Responsive adjustment for small phones */
 @media (max-width: 768px) {
