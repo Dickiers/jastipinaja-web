@@ -548,10 +548,12 @@
 }
 
 /* Placeholder image URLs (Swap with your real ones) */
+/* Placeholder image URLs (Swap with your real ones) */
 .img-testi-1 { background-image: url('testi1.png'); background-color: #a1c4fd; }
 .img-testi-2 { background-image: url('testi2.png'); background-color: #ffecd2; }
 .img-testi-3 { background-image: url('testi3.png'); background-color: #cfd9df; }
 .img-testi-4 { background-image: url('testi4.png'); background-color: #e0c3fc; }
+.img-testi-5 { background-image: url('testi5.png'); background-color: #fce38a; } /* <-- ADD THIS LINE */
 
 /* Text Content on the Left */
 .testi-content {
@@ -680,6 +682,9 @@
 
 .service-img-3 {
     background-image: url('card3.png');
+    background-size: contain; /* Forces the entire image to fit without cutting */
+    background-repeat: no-repeat;
+    background-position: left center; /* Anchors it to the left edge */
 }
 
   /* The Text Content Layer */
