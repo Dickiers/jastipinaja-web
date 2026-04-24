@@ -283,3 +283,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// --- MOBILE DROPDOWN (ACCORDION) LOGIC ---
+document.addEventListener('DOMContentLoaded', () => {
+    const dropbtn = document.querySelector('.dropbtn');
+    const dropdown = document.querySelector('.dropdown');
+
+    if (dropbtn && dropdown) {
+        dropbtn.addEventListener('click', (e) => {
+            // Only hijack the click if the user is on a mobile-sized screen
+            if (window.innerWidth <= 768) {
+                e.preventDefault(); // Stops the page from jumping
+                dropdown.classList.toggle('mobile-active');
+            }
+        });
+    }
+});
