@@ -1121,71 +1121,120 @@
     box-shadow: 0 4px 15px rgba(255, 154, 158, 0.3);
 }
 
+/* --- HAMBURGER MENU BUTTON --- */
+.hamburger {
+    display: none; /* Hidden on laptops */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
 /* =========================================
    📱 MOBILE OPTIMIZATION (Max Width: 768px)
    ========================================= */
 @media (max-width: 768px) {
     
-    /* 1. NAVBAR FIX: Stack the logo on top, wrap the links below */
+    /* 1. NAVBAR FIX: Hamburger Menu Activation */
     .navbar {
-        flex-direction: column;
+        flex-direction: row; /* Keeps logo and button side-by-side */
+        justify-content: space-between;
         padding: 15px 20px;
-        gap: 15px;
+    }
+
+    .hamburger {
+        display: flex; /* Show the 3 lines on mobile */
     }
 
     .nav-links {
-        flex-wrap: wrap; /* Allows links to flow to a new line if they run out of space */
-        justify-content: center;
-        gap: 15px 20px;
+        display: none; /* Hide links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Drop down right below the navbar */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        gap: 20px;
+        text-align: center;
+        z-index: 99;
     }
 
-    /* 2. HERO CAROUSEL FIX: Shrink the massive fonts */
-    .slide-content h1 {
-        font-size: 2.2rem; /* Shrunk down from 3.5rem */
+    /* This class gets added by JavaScript when the button is clicked */
+    .nav-links.active {
+        display: flex; 
     }
 
-    .slide-content p {
-        font-size: 1.05rem;
-        margin-bottom: 20px;
-        padding: 0 10px;
-    }
+    /* 2. HERO CAROUSEL FIX */
+    .slide-content h1 { font-size: 2.2rem; }
+    .slide-content p { font-size: 1.05rem; padding: 0 10px; }
+    .hero-carousel { height: 60vh; min-height: 420px; }
+    .carousel-btn { display: none; } /* Hide side arrows */
 
-    .hero-carousel {
-        height: 60vh;
-        min-height: 420px;
-    }
-
-    /* 3. SERVICE CARDS FIX: Stack vertically instead of side-by-side */
-    .service-card, 
-    .service-card.reverse {
-        flex-direction: column; /* Forces image on top, text on bottom */
+    /* 3. SERVICE CARDS FIX */
+    .service-card, .service-card.reverse {
+        flex-direction: column;
         min-height: auto;
     }
-
-    /* Fix the image layer so it sits at the top and fades downward */
-    .card-bg-image, 
-    .service-card.reverse .card-bg-image {
+    .card-bg-image, .service-card.reverse .card-bg-image {
         position: relative;
         width: 100%;
-        height: 250px; /* Fixed height for the image on mobile */
-        left: 0;
-        right: 0;
-        
-        /* Magic Fade: Changed from left-to-right to top-to-bottom */
+        height: 250px;
         -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
         mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
     }
-
-    /* Fix the text layer to sit nicely under the image */
-    .card-content, 
-    .service-card.reverse .card-content {
+    .card-content, .service-card.reverse .card-content {
         width: 100%;
-        margin-left: 0;
         padding: 0 30px 40px 30px;
-        margin-top: -30px; /* Pulls the text up slightly into the faded area */
-        text-align: center; /* Centers text for a better mobile reading experience */
-        align-items: center;
-        box-sizing: border-box;
+        margin-top: -30px;
+        text-align: center;
+    }
+
+    /* 4. TESTIMONI FIX: Stack Image Top, Text Bottom */
+    .testi-card {
+        width: 85vw; /* Shrink to fit phone screen */
+        height: auto;
+        flex-direction: column; /* Stack vertically */
+        margin: 0 10px;
+    }
+    .testi-bg-image {
+        position: relative;
+        width: 100%;
+        height: 180px;
+        border-radius: 24px 24px 0 0; /* Only round top corners */
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+    }
+    .testi-content {
+        width: 100%;
+        padding: 0 25px 30px;
+        margin-top: -20px; /* Pull into the fade */
+    }
+    .testi-btn {
+        display: none; /* Hide side arrows on mobile */
+    }
+
+    /* 5. FOOTER FIX: Stack Vertically */
+    .footer-container {
+        grid-template-columns: 1fr; /* Forces exactly 1 column */
+        gap: 40px;
+    }
+    .footer-col {
+        text-align: center; /* Centers the footer text for better mobile reading */
+    }
+    .footer-contact-links {
+        align-items: center; /* Centers the WhatsApp icons */
+    }
+    .social-icons {
+        justify-content: center; /* Centers the social media icons */
     }
 }
 
