@@ -1143,78 +1143,29 @@
 /* =========================================
    📱 MOBILE OPTIMIZATION (Max Width: 768px)
    ========================================= */
+/* =========================================
+   📱 MOBILE OPTIMIZATION (Max Width: 768px)
+   ========================================= */
 @media (max-width: 768px) {
     
-    /* 1. NAVBAR FIX: Smooth drop-down, Hamburger left, Logo center */
-    .navbar {
-        display: flex;
-        justify-content: center; 
-        align-items: center;
-        padding: 15px 20px;
-        position: relative; 
-    }
-
-    .hamburger {
-        display: flex;
-        position: absolute;
-        left: 20px; 
-    }
-
+    /* 1. NAVBAR FIX */
+    .navbar { display: flex; justify-content: center; align-items: center; padding: 15px 20px; position: relative; }
+    .hamburger { display: flex; position: absolute; left: 20px; }
     .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        text-align: center;
-        z-index: 99;
-        max-height: 0; 
-        padding: 0;
-        gap: 15px; 
-        overflow: hidden;
-        transition: max-height 0.4s ease, padding 0.4s ease;
+        display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%;
+        background-color: #fff; box-shadow: 0 10px 15px rgba(0,0,0,0.1); text-align: center; z-index: 99;
+        max-height: 0; padding: 0; gap: 15px; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease;
     }
+    .nav-links.active { max-height: 400px; padding: 20px 0; }
 
-    .nav-links.active {
-        max-height: 400px; 
-        padding: 20px 0;
-    }
     /* 1.5. MOBILE DROPDOWN ACCORDION FIX */
-    .dropdown {
-        width: 100%;
-    }
-
+    .dropdown { width: 100%; }
     .dropdown-content {
-        position: relative; /* Brings it back into the flow to push other links down */
-        top: 0;
-        box-shadow: none; /* Removes the floating shadow */
-        min-width: 100%;
-        background-color: #f8fcfb; /* Subtle tint to show it's a submenu */
-        border-radius: 0;
-        
-        /* Override desktop hover logic */
-        visibility: visible; 
-        opacity: 1; 
-        transform: translateY(0); 
-        
-        /* The Slide Magic */
-        max-height: 0; 
-        overflow: hidden;
-        transition: max-height 0.4s ease;
+        position: relative; top: 0; box-shadow: none; min-width: 100%; background-color: #f8fcfb; border-radius: 0;
+        visibility: visible; opacity: 1; transform: translateY(0); max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
     }
-
-    /* When clicked, the JS will add this class to slide it open */
-    .dropdown.mobile-active .dropdown-content {
-        max-height: 250px; 
-    }
-
-    /* Kills the desktop hover glitch on mobile */
-    .dropdown:hover .dropdown-content {
-        transform: translateY(0);
-    }
+    .dropdown.mobile-active .dropdown-content { max-height: 250px; }
+    .dropdown:hover .dropdown-content { transform: translateY(0); }
 
     /* 2. HERO CAROUSEL FIX */
     .slide-content h1 { font-size: 2.2rem; }
@@ -1222,98 +1173,69 @@
     .hero-carousel { height: 60vh; min-height: 420px; }
     .carousel-btn { display: none; }
 
-    /* 3. SERVICE CARDS FIX: Center alignment & Scaled down image */
-    .service-card, .service-card.reverse {
-        flex-direction: column;
-        min-height: auto;
-        align-items: center; 
-    }
+    /* 3. SERVICE CARDS FIX: Prevent 1:1 image cutoff */
+    .service-card, .service-card.reverse { flex-direction: column; min-height: auto; align-items: center; }
     .card-bg-image, .service-card.reverse .card-bg-image {
-        position: relative;
-        width: 100%;
-        height: 200px; /* Reduced from 250px to reveal more of the image */
+        position: relative; width: 100%; height: 200px; 
         -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
         mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
     }
-    .card-content, .service-card.reverse .card-content {
-        width: 100%;
-        margin: 0 !important; 
-        padding: 0 30px 40px 30px;
-        margin-top: -30px !important;
-        text-align: center;
-        box-sizing: border-box; 
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
+    
+    /* Anchors the 1:1 image to the bottom so the ship is visible */
+    .service-card.reverse .card-bg-image {
+        background-position: center bottom !important; 
     }
 
-    /* 4. TESTIMONI FIX: Scaled down card, centered arrows, scaled image */
+    .card-content, .service-card.reverse .card-content {
+        width: 100%; margin: 0 !important; padding: 0 30px 40px 30px; margin-top: -30px !important;
+        text-align: center; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; 
+    }
+
+    /* 4. TESTIMONI FIX: Shrink image, fix jumping buttons, fix overflowing text */
+    .testi-track {
+        align-items: stretch !important; /* Forces the white card to grow with the text */
+    }
     .testi-card {
-        width: 75vw; /* Scaled down from 85vw to make room for arrows */
-        height: auto; 
-        min-height: max-content;
+        width: 75vw; 
+        height: auto !important; /* Overrides desktop fixed height */
         flex-direction: column; 
         margin: 0 15px;
         padding-bottom: 25px; 
     }
     .testi-bg-image {
-        position: relative;
-        width: 100%;
-        height: 140px; /* Scaled down from 180px to reveal more image */
+        position: relative; width: 100%; 
+        height: 110px !important; /* Shrunk down further */
         border-radius: 24px 24px 0 0;
         -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
         mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
     }
     .testi-content {
-        width: 100%;
-        padding: 0 25px;
-        margin-top: -20px; 
-        flex-grow: 1; 
+        width: 100%; padding: 0 25px; margin-top: -20px; flex-grow: 1; 
     }
     
-    /* Perfecting the Arrow Buttons */
+    /* Center the Arrows and prevent jumping */
     .testi-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-        top: 50%; /* Pushes to the middle */
-        transform: translateY(-50%); /* Locks it perfectly to the dead-center line */
-        padding: 0; 
-        line-height: 1; 
-        font-family: Arial, sans-serif; /* Strips weird font spacing from the chevron */
+        display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;
+        font-size: 1.2rem; top: 50%; padding: 0; line-height: 1; font-family: Arial, sans-serif; 
+        transform: translateY(-50%); /* Start centered */
     }
     
-    /* Place arrows strictly on the edges of the screen */
+    /* Stops the jump animation when tapped on touchscreen */
+    .testi-btn:hover, .testi-btn:active {
+        transform: translateY(-50%) scale(1.05) !important; /* Locks Y-axis in place */
+    }
+
     .prev-testi { left: 0; }
     .next-testi { right: 0; }
 
-    /* 5. FOOTER FIX: Left aligned with ultra-tight gaps */
-    .main-footer {
-        padding: 40px 20px 0; /* Reduced top padding */
-    }
-    .footer-container {
-        grid-template-columns: 1fr; 
-        gap: 10px; /* Super tight margin between sections */
-    }
-    .footer-col {
-        text-align: left; 
-    }
-    .footer-contact-links {
-        align-items: flex-start; 
-    }
-    .social-icons {
-        justify-content: flex-start; 
-    }
-    .footer-landscape-img {
-        margin-left: 0;
-        margin-right: auto;
-    }
-    .mt-20 {
-        margin-top: 15px !important; /* Cuts the margin above "Jam Operasional" in half */
-    }
+    /* 5. FOOTER FIX */
+    .main-footer { padding: 40px 20px 0; }
+    .footer-container { grid-template-columns: 1fr; gap: 10px; }
+    .footer-col { text-align: left; }
+    .footer-contact-links { align-items: flex-start; }
+    .social-icons { justify-content: flex-start; }
+    .footer-landscape-img { margin-left: 0; margin-right: auto; }
+    .mt-20 { margin-top: 15px !important; }
 }
 
 /* FOOTER FIX: Stack columns vertically on mobile */
