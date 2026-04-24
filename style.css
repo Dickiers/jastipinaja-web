@@ -1140,24 +1140,21 @@
 /* =========================================
    📱 MOBILE OPTIMIZATION (Max Width: 768px)
    ========================================= */
-/* =========================================
-   📱 MOBILE OPTIMIZATION (Max Width: 768px)
-   ========================================= */
 @media (max-width: 768px) {
     
     /* 1. NAVBAR FIX: Smooth drop-down, Hamburger left, Logo center */
     .navbar {
         display: flex;
-        justify-content: center; /* Forces the logo into the exact center */
+        justify-content: center; 
         align-items: center;
         padding: 15px 20px;
-        position: relative; /* Allows us to pin the hamburger to the left */
+        position: relative; 
     }
 
     .hamburger {
         display: flex;
         position: absolute;
-        left: 20px; /* Pins the button to the far left edge */
+        left: 20px; 
     }
 
     .nav-links {
@@ -1172,17 +1169,17 @@
         text-align: center;
         z-index: 99;
         
-        /* The Smooth Animation Magic */
-        max-height: 0; /* Starts hidden */
+        /* The Animation Bug Fix */
+        max-height: 0; 
         padding: 0;
+        gap: 15px; /* Moving this here stops the "bulge" bug */
         overflow: hidden;
-        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        transition: max-height 0.4s ease, padding 0.4s ease;
     }
 
     .nav-links.active {
-        max-height: 400px; /* Expands to fit the links */
+        max-height: 400px; 
         padding: 20px 0;
-        gap: 15px; /* Adds breathing room between links */
     }
 
     /* 2. HERO CAROUSEL FIX */
@@ -1191,10 +1188,11 @@
     .hero-carousel { height: 60vh; min-height: 420px; }
     .carousel-btn { display: none; }
 
-    /* 3. SERVICE CARDS FIX */
+    /* 3. SERVICE CARDS FIX: Dead center alignment */
     .service-card, .service-card.reverse {
         flex-direction: column;
         min-height: auto;
+        align-items: center; /* Forces contents to center */
     }
     .card-bg-image, .service-card.reverse .card-bg-image {
         position: relative;
@@ -1205,19 +1203,24 @@
     }
     .card-content, .service-card.reverse .card-content {
         width: 100%;
+        margin: 0 !important; /* Kills the 50% desktop margin */
         padding: 0 30px 40px 30px;
-        margin-top: -30px;
+        margin-top: -30px !important;
         text-align: center;
+        box-sizing: border-box; /* Stops padding from making it too wide */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the Learn More button perfectly */
     }
 
-    /* 4. TESTIMONI FIX: Text overflow and visible arrows */
+    /* 4. TESTIMONI FIX: Centered arrows and fitted text */
     .testi-card {
         width: 85vw;
-        height: auto; /* Lets the card stretch down to fit all the text */
+        height: auto; 
         min-height: max-content;
         flex-direction: column; 
         margin: 0 10px;
-        padding-bottom: 25px; /* Extra padding so text doesn't touch the bottom */
+        padding-bottom: 25px; 
     }
     .testi-bg-image {
         position: relative;
@@ -1231,43 +1234,43 @@
         width: 100%;
         padding: 0 25px;
         margin-top: -20px; 
-        flex-grow: 1; /* Pushes the card taller if text is long */
+        flex-grow: 1; 
     }
     
-    /* Bring back the arrows but position them over the image so they don't block text */
+    /* Perfecting the Arrow Buttons */
     .testi-btn {
         display: flex;
+        justify-content: center;
+        align-items: center;
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
-        top: 30%; /* Lifts arrows up over the photo */
+        top: 30%; 
+        padding: 0; /* Kills default button padding */
+        line-height: 0; /* Forces exact vertical center */
     }
-    .prev-testi { left: 5px; }
-    .next-testi { right: 5px; }
+    
+    /* The Tiny Nudge for visual perfection */
+    .prev-testi { left: 5px; padding-right: 3px; }
+    .next-testi { right: 5px; padding-left: 3px; }
 
-    /* 5. FOOTER FIX: Stack Vertically, Align Right, Tight Margins */
+    /* 5. FOOTER FIX: Left aligned with tight gaps */
     .footer-container {
         grid-template-columns: 1fr; 
-        gap: 20px; /* Reduced margin/gap between sections */
+        gap: 20px; 
     }
     .footer-col {
-        text-align: right; /* Pushes all text to the right */
+        text-align: left; 
     }
-    
-    /* Forces the flex items (like WhatsApp links) to align right */
     .footer-contact-links {
-        align-items: flex-end; 
+        align-items: flex-start; /* Docks WhatsApp icons to left */
     }
-    
-    /* Forces the horizontal social icons to start from the right */
     .social-icons {
-        justify-content: flex-end; 
+        justify-content: flex-start; /* Docks Social icons to left */
     }
-    
-    /* Adjusts the landscape images so they align to the right edge */
     .footer-landscape-img {
-        margin-left: auto;
-        margin-right: 0;
+        margin-left: 0;
+        margin-right: auto;
     }
 }
 
