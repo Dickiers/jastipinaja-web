@@ -1173,19 +1173,19 @@
     .hero-carousel { height: 60vh; min-height: 420px; }
     .carousel-btn { display: none; }
 
-/* 3. SERVICE CARDS FIX: Scale image down instead of cropping */
+/* 3. SERVICE CARDS FIX: 'Contain' forces the whole image to show */
     .service-card, .service-card.reverse { flex-direction: column; min-height: auto; align-items: center; }
     
     .card-bg-image, .service-card.reverse .card-bg-image {
         position: relative; width: 100%; height: 200px; 
         
-        /* Forces the image to scale down to fit the width perfectly */
-        background-size: 100% auto !important; 
+        /* 'contain' guarantees the ENTIRE airplane and ship are visible */
+        background-size: contain !important; 
         background-position: center top !important;
         background-repeat: no-repeat !important;
         
-        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
-        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
     }
 
     .card-content, .service-card.reverse .card-content {
@@ -1193,18 +1193,19 @@
         text-align: center; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; 
     }
 
-    /* 4. TESTIMONI FIX: Force box to fit text, shrink image */
-    .testi-track {
-        align-items: stretch !important; 
-    }
+    /* 4. TESTIMONI FIX: Bulletproof expanding cards */
+    .testi-track-container { height: auto !important; overflow: visible !important; }
+    .testi-track { align-items: stretch !important; height: auto !important; }
+    
     .testi-card {
         width: 75vw; 
-        height: max-content !important; /* COMMANDS the box to grow with the text */
-        min-height: 350px; /* Gives a safe minimum height */
+        height: auto !important; 
+        min-height: fit-content !important; /* Forces box to fit the exact height of the text */
+        flex: 0 0 auto !important; /* Stops the horizontal slider from squishing the height */
         flex-direction: column; 
         margin: 0 15px;
-        /* Removed padding-bottom here to let the content div handle it */
     }
+    
     .testi-bg-image {
         position: relative; width: 100%; 
         height: 110px !important; 
@@ -1212,16 +1213,18 @@
         -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
         mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
     }
+    
     .testi-content {
         width: 100%; 
-        padding: 0 25px 40px 25px; /* Added heavy bottom padding inside the text box */
+        height: auto !important; 
+        padding: 0 25px 40px 25px !important; /* Heavy bottom padding to trap the text */
         margin-top: -20px; 
-        flex-grow: 1; 
+        flex: 1 1 auto !important; /* Allows the content area to grow */
         display: flex;
         flex-direction: column;
     }
     
-    /* Center the Arrows and prevent jumping */
+    /* Center the Arrows */
     .testi-btn {
         display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;
         font-size: 1.2rem; top: 50%; padding: 0; line-height: 1; font-family: Arial, sans-serif; 
