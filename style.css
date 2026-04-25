@@ -1173,17 +1173,19 @@
     .hero-carousel { height: 60vh; min-height: 420px; }
     .carousel-btn { display: none; }
 
-    /* 3. SERVICE CARDS FIX: Prevent 1:1 image cutoff */
+/* 3. SERVICE CARDS FIX: Scale image down instead of cropping */
     .service-card, .service-card.reverse { flex-direction: column; min-height: auto; align-items: center; }
+    
     .card-bg-image, .service-card.reverse .card-bg-image {
         position: relative; width: 100%; height: 200px; 
-        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-    }
-    
-    /* Anchors the 1:1 image to the bottom so the ship is visible */
-    .service-card.reverse .card-bg-image {
-        background-position: center bottom !important; 
+        
+        /* Forces the image to scale down to fit the width perfectly */
+        background-size: 100% auto !important; 
+        background-position: center top !important;
+        background-repeat: no-repeat !important;
+        
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
     }
 
     .card-content, .service-card.reverse .card-content {
@@ -1191,40 +1193,43 @@
         text-align: center; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; 
     }
 
-    /* 4. TESTIMONI FIX: Shrink image, fix jumping buttons, fix overflowing text */
+    /* 4. TESTIMONI FIX: Force box to fit text, shrink image */
     .testi-track {
-        align-items: stretch !important; /* Forces the white card to grow with the text */
+        align-items: stretch !important; 
     }
     .testi-card {
         width: 75vw; 
-        height: auto !important; /* Overrides desktop fixed height */
+        height: max-content !important; /* COMMANDS the box to grow with the text */
+        min-height: 350px; /* Gives a safe minimum height */
         flex-direction: column; 
         margin: 0 15px;
-        padding-bottom: 25px; 
+        /* Removed padding-bottom here to let the content div handle it */
     }
     .testi-bg-image {
         position: relative; width: 100%; 
-        height: 110px !important; /* Shrunk down further */
+        height: 110px !important; 
         border-radius: 24px 24px 0 0;
         -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
         mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
     }
     .testi-content {
-        width: 100%; padding: 0 25px; margin-top: -20px; flex-grow: 1; 
+        width: 100%; 
+        padding: 0 25px 40px 25px; /* Added heavy bottom padding inside the text box */
+        margin-top: -20px; 
+        flex-grow: 1; 
+        display: flex;
+        flex-direction: column;
     }
     
     /* Center the Arrows and prevent jumping */
     .testi-btn {
         display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;
         font-size: 1.2rem; top: 50%; padding: 0; line-height: 1; font-family: Arial, sans-serif; 
-        transform: translateY(-50%); /* Start centered */
+        transform: translateY(-50%); 
     }
-    
-    /* Stops the jump animation when tapped on touchscreen */
     .testi-btn:hover, .testi-btn:active {
-        transform: translateY(-50%) scale(1.05) !important; /* Locks Y-axis in place */
+        transform: translateY(-50%) scale(1.05) !important; 
     }
-
     .prev-testi { left: 0; }
     .next-testi { right: 0; }
 

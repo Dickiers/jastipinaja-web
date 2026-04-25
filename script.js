@@ -249,18 +249,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    btnNext.addEventListener('click', () => {
+btnNext.addEventListener('click', () => {
         if (currentIndex < cards.length - 1) {
-            currentIndex++;
-            updateTestimonialCarousel();
+            currentIndex++; // Go to next
+        } else {
+            currentIndex = 0; // If at the end, jump back to the first card
         }
+        updateTestimonialCarousel();
     });
 
     btnPrev.addEventListener('click', () => {
         if (currentIndex > 0) {
-            currentIndex--;
-            updateTestimonialCarousel();
+            currentIndex--; // Go to previous
+        } else {
+            currentIndex = cards.length - 1; // If at the beginning, jump to the last card
         }
+        updateTestimonialCarousel();
     });
 
     // Run once on load to center the first card
