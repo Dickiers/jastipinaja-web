@@ -1173,19 +1173,21 @@
     .hero-carousel { height: 60vh; min-height: 420px; }
     .carousel-btn { display: none; }
 
-/* 3. SERVICE CARDS FIX: 'Contain' forces the whole image to show */
+/* 3. SERVICE CARDS FIX: Scale up Card 2 */
     .service-card, .service-card.reverse { flex-direction: column; min-height: auto; align-items: center; }
     
-    .card-bg-image, .service-card.reverse .card-bg-image {
+    .card-bg-image {
         position: relative; width: 100%; height: 200px; 
-        
-        /* 'contain' guarantees the ENTIRE airplane and ship are visible */
-        background-size: contain !important; 
-        background-position: center top !important;
-        background-repeat: no-repeat !important;
-        
         -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
         mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    }
+
+    /* Increases the height of JUST the middle card, scaling the plane/ship up by 25% */
+    .service-card.reverse .card-bg-image {
+        height: 250px !important; 
+        background-size: contain !important; 
+        background-position: center bottom !important;
+        background-repeat: no-repeat !important;
     }
 
     .card-content, .service-card.reverse .card-content {
@@ -1193,23 +1195,22 @@
         text-align: center; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; 
     }
 
-    /* 4. TESTIMONI FIX: Bulletproof expanding cards */
-    .testi-track-container { height: auto !important; overflow: visible !important; }
-    .testi-track { align-items: stretch !important; height: auto !important; }
+    /* 4. TESTIMONI FIX: "Display: Block" forces the card to wrap the text */
+    .testi-track-container { height: auto !important; padding-bottom: 20px; }
+    .testi-track { align-items: flex-start !important; height: auto !important; }
     
     .testi-card {
         width: 75vw; 
         height: auto !important; 
-        min-height: fit-content !important; /* Forces box to fit the exact height of the text */
-        flex: 0 0 auto !important; /* Stops the horizontal slider from squishing the height */
-        flex-direction: column; 
+        display: block !important; /* THE MAGIC FIX: Strips the buggy flexbox height rules */
         margin: 0 15px;
+        border-radius: 24px;
+        overflow: hidden; 
     }
     
     .testi-bg-image {
         position: relative; width: 100%; 
-        height: 110px !important; 
-        border-radius: 24px 24px 0 0;
+        height: 120px !important; 
         -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
         mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
     }
@@ -1217,11 +1218,10 @@
     .testi-content {
         width: 100%; 
         height: auto !important; 
-        padding: 0 25px 40px 25px !important; /* Heavy bottom padding to trap the text */
+        display: block !important; /* THE MAGIC FIX: Forces text to dictate the height */
+        padding: 0 25px 40px 25px !important; /* Thick bottom padding to trap the text */
         margin-top: -20px; 
-        flex: 1 1 auto !important; /* Allows the content area to grow */
-        display: flex;
-        flex-direction: column;
+        box-sizing: border-box;
     }
     
     /* Center the Arrows */
@@ -1230,9 +1230,7 @@
         font-size: 1.2rem; top: 50%; padding: 0; line-height: 1; font-family: Arial, sans-serif; 
         transform: translateY(-50%); 
     }
-    .testi-btn:hover, .testi-btn:active {
-        transform: translateY(-50%) scale(1.05) !important; 
-    }
+    .testi-btn:hover, .testi-btn:active { transform: translateY(-50%) scale(1.05) !important; }
     .prev-testi { left: 0; }
     .next-testi { right: 0; }
 
