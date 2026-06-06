@@ -547,13 +547,12 @@
     mask-image: linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
 }
 
-/* Placeholder image URLs (Swap with your real ones) */
-/* Placeholder image URLs (Swap with your real ones) */
-.img-testi-1 { background-image: url('testi1.png'); background-color: #a1c4fd; }
-.img-testi-2 { background-image: url('testi2.png'); background-color: #ffecd2; }
-.img-testi-3 { background-image: url('testi3.png'); background-color: #cfd9df; }
-.img-testi-4 { background-image: url('testi4.png'); background-color: #e0c3fc; }
-.img-testi-5 { background-image: url('testi5.png'); background-color: #fce38a; } /* <-- ADD THIS LINE */
+/* --- TESTIMONIAL IMAGE PATHS --- */
+.img-testi-1 { background-image: url('Testi_Card_Photo/testi1.png'); background-color: #a1c4fd; }
+.img-testi-2 { background-image: url('Testi_Card_Photo/testi2.png'); background-color: #ffecd2; }
+.img-testi-3 { background-image: url('Testi_Card_Photo/testi3.png'); background-color: #cfd9df; }
+.img-testi-4 { background-image: url('Testi_Card_Photo/testi4.png'); background-color: #e0c3fc; }
+.img-testi-5 { background-image: url('Testi_Card_Photo/testi5.png'); background-color: #fce38a; }
 
 /* Text Content on the Left */
 .testi-content {
@@ -678,13 +677,20 @@
 
 .service-img-2 {
     background-image: url('card2.png');
+}/* --- SERVICE CARD IMAGES --- */
+.service-img-1 {
+    background-image: url('Ser_Card_Photo/card1.png');
+}
+
+.service-img-2 {
+    background-image: url('Ser_Card_Photo/card2.png');
 }
 
 .service-img-3 {
-    background-image: url('card3.png');
-    background-size: contain; /* Forces the entire image to fit without cutting */
+    background-image: url('Ser_Card_Photo/card3.png');
+    background-size: contain; 
     background-repeat: no-repeat;
-    background-position: left center; /* Anchors it to the left edge */
+    background-position: left center;
 }
 
   /* The Text Content Layer */
@@ -1137,12 +1143,143 @@
     border-radius: 3px;
 }
 
-/* =========================================
-   📱 MOBILE OPTIMIZATION (Max Width: 768px)
-   ========================================= */
-/* =========================================
-   📱 MOBILE OPTIMIZATION (Max Width: 768px)
-   ========================================= */
+/* --- GOOGLE DRIVE STYLE GALLERY --- */
+.gallery-section {
+    padding: 60px 20px 100px;
+    background-color: #ffffff;
+}
+
+.gallery-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /* This automatically creates as many columns as fit on the screen */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* The "File/Folder" Look */
+.gallery-item {
+    background: #f8f9fa;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    background: #fff;
+    border-color: #0056b3;
+    box-shadow: 0 10px 20px rgba(0, 86, 179, 0.1);
+    transform: translateY(-3px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Keeps image proportions nice */
+    border-radius: 8px;
+    background-color: #eaeaea;
+}
+
+.gallery-item p {
+    margin: 15px 0 5px;
+    text-align: center;
+    font-weight: 600;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+/* --- THE LIGHTBOX MODAL --- */
+.lightbox-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark semi-transparent background */
+    backdrop-filter: blur(5px);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease;
+}
+
+#lightbox-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 15px 0;
+    font-size: 1.2rem;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Lightbox Navigation Arrows */
+.lightbox-prev, 
+.lightbox-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    transition: 0.3s ease;
+    user-select: none;
+    background-color: rgba(0,0,0,0.4);
+    border: none;
+    z-index: 1001;
+    border-radius: 4px;
+}
+
+.lightbox-prev { left: 15px; }
+.lightbox-next { right: 15px; }
+
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.9); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+
 /* =========================================
    📱 MOBILE OPTIMIZATION (Max Width: 768px)
    ========================================= */
@@ -1244,8 +1381,3 @@
     .mt-20 { margin-top: 15px !important; }
 }
 
-/* FOOTER FIX: Stack columns vertically on mobile */
-    .footer-container {
-        flex-direction: column;
-        gap: 40px;
-    }

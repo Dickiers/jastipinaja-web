@@ -303,3 +303,66 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+// --- GALLERY LIGHTBOX LOGIC (WITH ARROWS) ---
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    let currentIndex = 0; // Remembers which photo we are looking at
+
+    // Only run if the gallery exists on this page
+    if (lightbox && galleryItems.length > 0) {
+        
+        // Function to load a specific image by its index number
+        function showImage(index) {
+            const item = galleryItems[index];
+            const img = item.querySelector('img');
+            const caption = item.querySelector('p');
+            
+            lightboxImg.src = img.src;
+            lightboxCaption.innerHTML = caption.innerHTML;
+            currentIndex = index; // Save this as the current photo
+        }
+
+        // Open Lightbox when an item is clicked
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                lightbox.style.display = 'block';
+                showImage(index);
+            });
+        });
+
+        // Close Lightbox
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        // Navigate Left (Previous)
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Stops the click from accidentally closing the lightbox
+            let newIndex = currentIndex - 1;
+            if (newIndex < 0) newIndex = galleryItems.length - 1; // Loop to end
+            showImage(newIndex);
+        });
+
+        // Navigate Right (Next)
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            let newIndex = currentIndex + 1;
+            if (newIndex >= galleryItems.length) newIndex = 0; // Loop to start
+            showImage(newIndex);
+        });
+
+        // Close Lightbox when clicking the dark background (but NOT the image or buttons)
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg && e.target !== prevBtn && e.target !== nextBtn) {
+                lightbox.style.display = 'none';
+            }
+        });
+    }
+});
