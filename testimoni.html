@@ -1,178 +1,191 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Testimoni & Dokumentasi | Jastipinaja.cn</title>
     <!-- Pointing to Others_Photo -->
-    <link rel="icon" type="image/png" href="Others_Photo/logo_notext.png">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="icon" type="image/png" href="Others_Photo/logo_notext.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="logo">
-            <a href="/">
-                <!-- Pointing to Others_Photo -->
-                <img src="Others_Photo/logo.png" alt="Jastipinaja Logo" class="nav-logo">
-            </a>
-        </div>
-        
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        
-        <ul class="nav-links">
-            <li><a href="/">Home Page</a></li>
-            <li class="dropdown">
-                <a href="/#services" class="dropbtn">Our Services ▾</a>
-                <div class="dropdown-content">
-                    <a href="checkout">Jasa Titip Beli & Kirim (All-in)</a>
-                    <a href="forwarding">Jasa Kirim & Forwarding</a>
-                    <a href="topup">Jasa Top-up RMB & Alipay</a>
-                </div>
-            </li>
-            <li><a href="faq">FAQ</a></li>
-            <li><a href="testimoni">Testimoni</a></li>
-            <li><a href="contact" class="nav-contact-btn">Contact Us</a></li>
-        </ul>
+      <div class="logo">
+        <a href="/">
+          <!-- Pointing to Others_Photo -->
+          <img src="Others_Photo/logo.png" alt="Jastipinaja Logo" class="nav-logo" />
+        </a>
+      </div>
+
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="/">Home Page</a></li>
+        <li class="dropdown">
+          <a href="/#services" class="dropbtn">Our Services ▾</a>
+          <div class="dropdown-content">
+            <a href="checkout">Jasa Titip Beli & Kirim (All-in)</a>
+            <a href="forwarding">Jasa Kirim & Forwarding</a>
+            <a href="topup">Jasa Top-up RMB & Alipay</a>
+          </div>
+        </li>
+        <li><a href="faq">FAQ</a></li>
+        <li><a href="testimoni">Testimoni</a></li>
+        <li><a href="contact" class="nav-contact-btn">Contact Us</a></li>
+      </ul>
     </nav>
 
     <!-- HERO SECTION -->
     <header class="hero">
-        <h1>Testimoni & Dokumentasi</h1>
-        <p>Ribuan paket telah berhasil kami kirimkan dengan aman ke seluruh Indonesia. Berikut adalah bukti nyata kepercayaan pelanggan kami.</p>
+      <h1>Testimoni & Dokumentasi</h1>
+      <p>
+        Ribuan paket telah berhasil kami kirimkan dengan aman ke seluruh Indonesia. Berikut adalah bukti nyata
+        kepercayaan pelanggan kami.
+      </p>
     </header>
-
-    <!-- GALLERY SECTION (Main Feature) -->
-<section class="gallery-section">
-        <h2 class="section-title">Dokumentasi Barang</h2>
-        
-        <!-- Leave this div completely EMPTY! JavaScript will fill it. -->
-        <div class="gallery-grid" id="auto-gallery">
-            
-        </div>
-    </section>
 
     <!-- TESTIMONIAL SLIDER SECTION -->
     <section class="testimonial-section">
-        <h2 class="section-title">Apa Kata Mereka?</h2>
-        
-        <div class="rating-summary">
-            <div class="stars">★★★★★</div>
-            <div class="rating-score"><strong>4.9 / 5.0</strong></div>
-            <p>Berdasarkan 500+ transaksi sukses</p>
-        </div>
+      <div class="testi-wrapper">
+        <button class="testi-btn prev-testi">&#10094;</button>
 
-        <div class="testi-wrapper">
-            <button class="testi-btn prev-testi">&#10094;</button>
-            
-            <div class="testi-track-container">
-                <ul class="testi-track">
-                    <!-- Note: Your CSS uses .img-testi-1 classes, ensure your CSS background-image paths are updated in style.css to point to Testi_Card_Photo/ -->
-                    <li class="testi-card active">
-                        <div class="testi-bg-image img-testi-1"></div>
-                        <div class="testi-content">
-                            <h4 class="cust-name">Dicky</h4>
-                            <span class="item-name">Italian Charm Bracelet</span>
-                            <p class="testi-text">"Sangat membantu! Karena saya jualan barang trending, butuh barang sampai dengan cepat. Jastipinaja bisa bantu belikan dan bawa barang saya ke Jakarta kurang dari seminggu sudah sampai."</p>
-                            <div class="testi-nominal">Total Transaksi: <strong>~Rp 450.000.000</strong></div>
-                        </div>
-                    </li>
-                    <li class="testi-card">
-                        <div class="testi-bg-image img-testi-2"></div>
-                        <div class="testi-content">
-                            <h4 class="cust-name">Gloria</h4>
-                            <span class="item-name">Kuku Palsu (Nail Art)</span>
-                            <p class="testi-text">"Kulakan kuku palsu dari China sekarang jauh lebih mudah. Admin Jastipinaja sangat teliti bantu cek pesanan partai besar saya sebelum dikirim. Barang sampai aman dan bebas pusing urus bea cukai!"</p>
-                            <div class="testi-nominal">Total Transaksi: <strong>~Rp 200.000.000</strong></div>
-                        </div>
-                    </li>
-                    <li class="testi-card">
-                        <div class="testi-bg-image img-testi-3"></div>
-                        <div class="testi-content">
-                            <h4 class="cust-name">Eavan</h4>
-                            <span class="item-name">Susu Formula</span>
-                            <p class="testi-text">"Awalnya ragu kirim banyak karena ini bahan makanan. Ternyata Jastipinaja bisa bantu bawa pakai handcarry. Kalengnya selalu datang mulus, tidak ada yang penyok sama sekali!"</p>
-                            <div class="testi-nominal">Total Transaksi: <strong>~Rp 50.000.000</strong></div>
-                        </div>
-                    </li>
-                    <li class="testi-card">
-                        <div class="testi-bg-image img-testi-4"></div>
-                        <div class="testi-content">
-                            <h4 class="cust-name">Riki</h4>
-                            <span class="item-name">Baju Branded</span>
-                            <p class="testi-text">"Agen kirim lain jarang ada yang mau terima bantu bawa baju branded. Tapi di sini mereka berani terima dan selama ini aman, tidak pernah kena masalah. Barang juga selalu sampai tepat waktu."</p>
-                            <div class="testi-nominal">Total Transaksi: <strong>~Rp 150.000.000</strong></div>
-                        </div>
-                    </li>
-                    <li class="testi-card">
-                        <div class="testi-bg-image img-testi-5"></div>
-                        <div class="testi-content">
-                            <h4 class="cust-name">Fera</h4>
-                            <span class="item-name">Blindbox & Figurines</span>
-                            <p class="testi-text">"Sering PO Pop Mart dan blindbox langka pakai Jastipinaja. Yang bikin tenang, box-nya selalu utuh dan aman sampai tujuan. Estimasi waktu juga akurat, jadi customer saya tidak nunggu lama."</p>
-                            <div class="testi-nominal">Total Transaksi: <strong>~Rp 300.000.000</strong></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <button class="testi-btn next-testi">&#10095;</button>
+        <div class="testi-track-container">
+          <ul class="testi-track">
+            <!-- Note: Your CSS uses .img-testi-1 classes, ensure your CSS background-image paths are updated in style.css to point to Testi_Card_Photo/ -->
+            <li class="testi-card active">
+              <div class="testi-bg-image img-testi-1"></div>
+              <div class="testi-content">
+                <h4 class="cust-name">Dicky</h4>
+                <span class="item-name">Italian Charm Bracelet</span>
+                <p class="testi-text">
+                  "Sangat membantu! Karena saya jualan barang trending, butuh barang sampai dengan cepat. Jastipinaja
+                  bisa bantu belikan dan bawa barang saya ke Jakarta kurang dari seminggu sudah sampai."
+                </p>
+                <div class="testi-nominal">Total Transaksi: <strong>~Rp 450.000.000</strong></div>
+              </div>
+            </li>
+            <li class="testi-card">
+              <div class="testi-bg-image img-testi-2"></div>
+              <div class="testi-content">
+                <h4 class="cust-name">Gloria</h4>
+                <span class="item-name">Kuku Palsu (Nail Art)</span>
+                <p class="testi-text">
+                  "Kulakan kuku palsu dari China sekarang jauh lebih mudah. Admin Jastipinaja sangat teliti bantu cek
+                  pesanan partai besar saya sebelum dikirim. Barang sampai aman dan bebas pusing urus bea cukai!"
+                </p>
+                <div class="testi-nominal">Total Transaksi: <strong>~Rp 200.000.000</strong></div>
+              </div>
+            </li>
+            <li class="testi-card">
+              <div class="testi-bg-image img-testi-3"></div>
+              <div class="testi-content">
+                <h4 class="cust-name">Eavan</h4>
+                <span class="item-name">Susu Formula</span>
+                <p class="testi-text">
+                  "Awalnya ragu kirim banyak karena ini bahan makanan. Ternyata Jastipinaja bisa bantu bawa pakai
+                  handcarry. Kalengnya selalu datang mulus, tidak ada yang penyok sama sekali!"
+                </p>
+                <div class="testi-nominal">Total Transaksi: <strong>~Rp 50.000.000</strong></div>
+              </div>
+            </li>
+            <li class="testi-card">
+              <div class="testi-bg-image img-testi-4"></div>
+              <div class="testi-content">
+                <h4 class="cust-name">Riki</h4>
+                <span class="item-name">Baju Branded</span>
+                <p class="testi-text">
+                  "Agen kirim lain jarang ada yang mau terima bantu bawa baju branded. Tapi di sini mereka berani terima
+                  dan selama ini aman, tidak pernah kena masalah. Barang juga selalu sampai tepat waktu."
+                </p>
+                <div class="testi-nominal">Total Transaksi: <strong>~Rp 150.000.000</strong></div>
+              </div>
+            </li>
+            <li class="testi-card">
+              <div class="testi-bg-image img-testi-5"></div>
+              <div class="testi-content">
+                <h4 class="cust-name">Fera</h4>
+                <span class="item-name">Blindbox & Figurines</span>
+                <p class="testi-text">
+                  "Sering PO Pop Mart dan blindbox langka pakai Jastipinaja. Yang bikin tenang, box-nya selalu utuh dan
+                  aman sampai tujuan. Estimasi waktu juga akurat, jadi customer saya tidak nunggu lama."
+                </p>
+                <div class="testi-nominal">Total Transaksi: <strong>~Rp 300.000.000</strong></div>
+              </div>
+            </li>
+          </ul>
         </div>
+        <button class="testi-btn next-testi">&#10095;</button>
+      </div>
     </section>
 
     <!-- LIGHTBOX -->
     <div id="lightbox" class="lightbox-modal">
-        <span class="lightbox-close">&times;</span>
-        <button class="lightbox-prev">&#10094;</button>
-        <button class="lightbox-next">&#10095;</button>
-        <img class="lightbox-content" id="lightbox-img">
-        <div id="lightbox-caption"></div>
+      <span class="lightbox-close">&times;</span>
+      <button class="lightbox-prev">&#10094;</button>
+      <button class="lightbox-next">&#10095;</button>
+      <img class="lightbox-content" id="lightbox-img" />
+      <div id="lightbox-caption"></div>
     </div>
+
+    <!-- GALLERY SECTION (Main Feature) -->
+    <section class="gallery-section">
+      <h2 class="section-title">Dokumentasi Barang</h2>
+
+      <!-- Leave this div completely EMPTY! JavaScript will fill it. -->
+      <div class="gallery-grid" id="auto-gallery"></div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h3>Layanan Kami</h3>
-                <ul class="footer-links">
-                    <li><a href="checkout">Jasa Titip Beli & Checkout</a></li>
-                    <li><a href="forwarding">Jasa Kirim Barang & Forwarding</a></li>
-                    <li><a href="topup">Jasa Top-up RMB & Alipay</a></li>
-                </ul>
-                <h3 class="mt-20">Jam Operasional</h3>
-                <p>🕒 09:00 - 22:00 (Senin - Minggu)</p>
-            </div>
-            <div class="footer-col">
-                <h3>Hubungi Kami</h3>
-                <p class="footer-address">📍 Jl. Madrasah No.1a, RT.1/RW.3, Gandaria Sel., Kec. Cilandak, Kota Jakarta Selatan, DKI Jakarta 12420</p>
-                <div class="footer-contact-links">
-                    <a href="https://wa.me/6285102280001" target="_blank"><img src="Footer_Photo/whatsapp_logo.png" alt="WA" class="small-icon"> Joshua (+62 851 0228 0001)</a>
-                    <a href="#" target="_blank"><img src="Footer_Photo/group.png" alt="WA Group" class="small-icon"> Whatsapp Group Jastipinajacn</a>
-                </div>
-                <h3 class="mt-20">Ikuti Kami</h3>
-                <div class="social-icons">
-                    <a href="#"><img src="Footer_Photo/instagram.png" alt="Instagram"></a>
-                    <a href="#"><img src="Footer_Photo/facebook.png" alt="Facebook"></a>
-                    <a href="#"><img src="Footer_Photo/threads.png" alt="Threads"></a>
-                    <a href="#"><img src="Footer_Photo/shopee.png" alt="Shopee"></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h3>E-commerce China</h3>
-                <img src="Footer_Photo/ecommerce.png" alt="Partner E-commerce" class="footer-landscape-img">
-                <h3 class="mt-20">Pembayaran</h3>
-                <img src="Footer_Photo/bank.png" alt="Metode Pembayaran" class="footer-landscape-img">
-            </div>
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>Layanan Kami</h3>
+          <ul class="footer-links">
+            <li><a href="checkout">Jasa Titip Beli & Checkout</a></li>
+            <li><a href="forwarding">Jasa Kirim Barang & Forwarding</a></li>
+            <li><a href="topup">Jasa Top-up RMB & Alipay</a></li>
+          </ul>
+          <h3 class="mt-20">Jam Operasional</h3>
+          <p>🕒 09:00 - 22:00 (Senin - Minggu)</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Jastipinaja.cn. All Rights Reserved.</p>
+        <div class="footer-col">
+          <h3>Hubungi Kami</h3>
+          <p class="footer-address">
+            📍 Jl. Madrasah No.1a, RT.1/RW.3, Gandaria Sel., Kec. Cilandak, Kota Jakarta Selatan, DKI Jakarta 12420
+          </p>
+          <div class="footer-contact-links">
+            <a href="https://wa.me/6285102280001" target="_blank"
+              ><img src="Footer_Photo/whatsapp_logo.png" alt="WA" class="small-icon" /> Joshua (+62 851 0228 0001)</a
+            >
+            <a href="#" target="_blank"
+              ><img src="Footer_Photo/group.png" alt="WA Group" class="small-icon" /> Whatsapp Group Jastipinajacn</a
+            >
+          </div>
+          <h3 class="mt-20">Ikuti Kami</h3>
+          <div class="social-icons">
+            <a href="#"><img src="Footer_Photo/instagram.png" alt="Instagram" /></a>
+            <a href="#"><img src="Footer_Photo/facebook.png" alt="Facebook" /></a>
+            <a href="#"><img src="Footer_Photo/threads.png" alt="Threads" /></a>
+            <a href="#"><img src="Footer_Photo/shopee.png" alt="Shopee" /></a>
+          </div>
         </div>
+        <div class="footer-col">
+          <h3>E-commerce China</h3>
+          <img src="Footer_Photo/ecommerce.png" alt="Partner E-commerce" class="footer-landscape-img" />
+          <h3 class="mt-20">Pembayaran</h3>
+          <img src="Footer_Photo/bank.png" alt="Metode Pembayaran" class="footer-landscape-img" />
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Jastipinaja.cn. All Rights Reserved.</p>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
