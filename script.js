@@ -37,7 +37,7 @@ function calculateJastip() {
     const rmb = parseFloat(document.getElementById('calc-rmb').value) || 0;
     const kg = parseFloat(document.getElementById('calc-kg').value) || 0;
     const shipRate = parseFloat(document.getElementById('calc-method').value);
-    const kurs = 2500;
+    const kurs = 2700;
 
     // 2. Logic for Tiered Fee %
     let feePercent = 0.15; // Default < 1000
