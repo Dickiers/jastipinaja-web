@@ -10,7 +10,7 @@ const files = [
 ];
 const imageFolders = [
   'Footer_Photo', 'Others_Photo', 'Ser_Card_Photo',
-  'Testi_Card_Photo', 'Testi_Photo'
+  'Testi_Card_Photo', 'Testi_Photo', 'Testi_Optimized'
 ];
 const allowedImages = /\.(jpe?g|png|webp|svg|ico)$/i;
 
@@ -20,6 +20,17 @@ for (const file of files) {
 }
 for (const folder of imageFolders) {
   if (!fs.statSync(path.join(root, folder)).isDirectory()) throw new Error(`Missing image folder: ${folder}`);
+}
+// Catch new photos whose optimized copies have not been generated yet.
+for (const name of fs.readdirSync(path.join(root, 'Testi_Photo')).filter(name => /^doc\d+\.jpg$/i.test(name))) {
+  for (const suffix of ['-thumb.webp', '.webp']) {
+    if (!fs.existsSync(path.join(root, 'Testi_Optimized', path.parse(name).name + suffix))) {
+      throw new Error('Missing optimized photo for ' + name + '. Run npm run optimize:photos first.');
+    }
+  }
+}
+for (let index = 1; index <= 8; index++) {
+  if (!fs.existsSync(path.join(root, 'Testi_Optimized', 'story' + index + '.webp'))) throw new Error('Missing optimized carousel photo. Run npm run optimize:photos first.');
 }
 if (path.dirname(output) !== root || path.basename(output) !== 'hosting-public') throw new Error('Unexpected deployment directory.');
 if (fs.existsSync(output) && fs.lstatSync(output).isSymbolicLink()) throw new Error('Deployment directory cannot be a symlink.');

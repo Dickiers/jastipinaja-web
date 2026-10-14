@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const img = item.querySelector('img');
             const caption = item.querySelector('p');
             
-            lightboxImg.src = img.src;
+            lightboxImg.src = img.dataset.full || img.src;
             lightboxCaption.innerHTML = caption.innerHTML;
             currentIndex = index; // Save this as the current photo
         }
@@ -493,8 +493,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             galleryHTML += `
-                <div class="gallery-item">
-                    <img src="Testi_Photo/doc${docNumber}.jpg" alt="Dokumentasi ${docNumber}" loading="lazy">
+                <div class="gallery-item" ${i >= 8 ? "hidden" : ""}>
+                    <img data-src="Testi_Optimized/doc${docNumber}-thumb.webp" data-full="Testi_Optimized/doc${docNumber}.webp" alt="Dokumentasi ${docNumber}" width="640" height="640" decoding="async">
                     <div class="gallery-tags-container">
                         ${tagsHTML}
                     </div>
@@ -523,7 +523,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const img = item.querySelector('img');
             const tagsContainer = item.querySelector('.gallery-tags-container');
             
-            lightboxImg.src = img.src;
+            lightboxImg.src = img.dataset.full || img.src;
             lightboxImg.alt = img.alt;
             // Copies the same exact pill tags into the lightbox popup!
             lightboxCaption.innerHTML = tagsContainer.innerHTML; 

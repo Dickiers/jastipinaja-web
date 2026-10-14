@@ -1,0 +1,1 @@
+{"name":"jastipinaja-website","private":true,"scripts":{"optimize:photos":"node tools/optimize-photos.cjs","build":"node tools/build-hosting.cjs"},"devDependencies":{"sharp":"0.35.5"}}

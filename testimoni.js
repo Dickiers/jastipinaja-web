@@ -143,6 +143,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Assign a thumbnail URL only when its card approaches the visible area.
+  // IntersectionObserver accounts for clipping inside the scrollable gallery.
+  const loadPreview = item => {
+    const image = item.querySelector('img[data-src]');
+    if (!image) return;
+    image.src = image.dataset.src;
+    image.removeAttribute('data-src');
+  };
+  const previewObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting || entry.target.hidden) return;
+          loadPreview(entry.target);
+          previewObserver.unobserve(entry.target);
+        });
+      }, { rootMargin: '250px 0px' })
+    : null;
+  if (previewObserver) items.forEach(item => previewObserver.observe(item));
+
   function matchingItems() {
     if (activeFilter === 'all') return items;
     const categoryTags = {
@@ -164,6 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const visibleSet = new Set(galleryExpanded ? matches : matches.slice(0, 8));
     items.forEach(item => {
       item.hidden = !visibleSet.has(item);
+      if (!item.hidden && !previewObserver) loadPreview(item);
     });
     count.textContent = galleryExpanded
       ? `${matches.length} foto tersedia. Gulir di dalam galeri untuk melihat semuanya.`

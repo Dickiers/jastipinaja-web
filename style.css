@@ -567,35 +567,35 @@ body {
 
 /* --- TESTIMONIAL IMAGE PATHS --- */
 .img-testi-1 {
-  background-image: url('Testi_Card_Photo/testi1.png');
+  background-image: url('Testi_Optimized/story1.webp');
   background-color: #a1c4fd;
 }
 .img-testi-2 {
-  background-image: url('Testi_Card_Photo/testi2.png');
+  background-image: url('Testi_Optimized/story2.webp');
   background-color: #ffecd2;
 }
 .img-testi-3 {
-  background-image: url('Testi_Card_Photo/testi3.png');
+  background-image: url('Testi_Optimized/story3.webp');
   background-color: #cfd9df;
 }
 .img-testi-4 {
-  background-image: url('Testi_Card_Photo/testi4.png');
+  background-image: url('Testi_Optimized/story4.webp');
   background-color: #e0c3fc;
 }
 .img-testi-5 {
-  background-image: url('Testi_Card_Photo/testi5.png');
+  background-image: url('Testi_Optimized/story5.webp');
   background-color: #fce38a;
 }
 .img-testi-6 {
-  background-image: url('Testi_Card_Photo/testi6.png');
+  background-image: url('Testi_Optimized/story6.webp');
   background-color: #ffb6b9;
 } /* Soft Pink */
 .img-testi-7 {
-  background-image: url('Testi_Card_Photo/testi7.png');
+  background-image: url('Testi_Optimized/story7.webp');
   background-color: #a8e6cf;
 } /* Soft Mint Green */
 .img-testi-8 {
-  background-image: url('Testi_Card_Photo/testi8.png');
+  background-image: url('Testi_Optimized/story8.webp');
   background-color: #c7ecee;
 } /* Soft Teal */
 

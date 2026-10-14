@@ -49,3 +49,23 @@ services such as Cloud Run require separate billing setup.
 
 References: [Firebase Hosting configuration](https://firebase.google.com/docs/hosting/full-config),
 [Firebase Hosting quotas](https://firebase.google.com/docs/hosting/usage-quotas-pricing).
+
+## Optimizing testimonial photos
+
+Original photos stay in `Testi_Photo/`. The site uses generated WebP copies in
+`Testi_Optimized/`: 640-pixel square grid previews (quality 78), uncropped enlarged
+photos up to 1920 pixels (quality 85), and carousel images up to 960 pixels
+(quality 82). Images are never enlarged beyond their source resolution.
+
+After adding or replacing photos, run:
+
+```powershell
+npm ci
+npm run optimize:photos
+npm run build
+```
+
+Commit the optimized files along with the original photos and gallery tag updates.
+The grid assigns preview URLs only when cards approach the visible area; enlarged
+photos download only when opened in the lightbox. This keeps filtering and the
+scrollable gallery available without requesting all photos at page load.
