@@ -1816,10 +1816,7 @@
   }
   .site-footer .footer-col:last-child {
     grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 28px;
-    align-items: start;
+    display: block;
   }
   .site-footer .footer-col:last-child h2 {
     grid-row: 1;
