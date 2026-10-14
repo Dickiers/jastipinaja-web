@@ -1818,7 +1818,7 @@
     grid-column: 1 / -1;
     display: block;
   }
-  .site-footer .footer-col:last-child h2 {
+  .site-footer .footer-col:last-child h2:not(.mt-20) {
     grid-row: 1;
     margin-top: 0;
   }
