@@ -401,7 +401,7 @@
   max-width: 1180px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1.3fr 0.8fr 1fr;
+  grid-template-columns: 1fr 1.15fr 1fr;
   gap: 60px;
 }
 .site-footer p {
@@ -1730,5 +1730,110 @@
     scroll-behavior: auto !important;
     transition: none !important;
     animation: none !important;
+  }
+}
+
+/* Official wordmark and restored footer content. */
+.site-header .brand-wide {
+  display: block;
+  width: 210px;
+  height: auto;
+}
+.site-footer .footer-grid > * {
+  min-width: 0;
+}
+.site-footer .footer-grid h2 {
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+.site-footer .footer-grid h2.mt-20 {
+  margin-top: 28px;
+}
+.site-footer .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+.site-footer .footer-contact-links {
+  display: grid;
+  gap: 14px;
+}
+.site-footer .footer-contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.site-footer .small-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex: none;
+}
+.site-footer .social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.site-footer .social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+.site-footer .social-icons a:hover {
+  border-color: var(--brand);
+  background: var(--wash);
+}
+.site-footer .social-icons img {
+  display: block;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.site-footer .footer-landscape-img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+.site-footer .footer-bottom-new p {
+  max-width: none;
+  margin: 0;
+}
+@media (max-width: 800px) {
+  .site-header .brand-wide {
+    width: 180px;
+  }
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .site-footer .footer-col:last-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 28px;
+    align-items: start;
+  }
+  .site-footer .footer-col:last-child h2 {
+    grid-row: 1;
+    margin-top: 0;
+  }
+}
+@media (max-width: 520px) {
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .site-footer .footer-col:last-child {
+    display: block;
+  }
+  .site-footer .footer-col:last-child h2.mt-20 {
+    margin-top: 28px;
   }
 }
