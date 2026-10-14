@@ -1837,3 +1837,85 @@
     margin-top: 28px;
   }
 }
+
+/* Interaction motion: brief, interruptible, and disabled for reduced motion. */
+html {
+  scroll-behavior: smooth;
+}
+.site-header .menu-toggle,
+.site-header .site-nav > a,
+.site-header .service-popover a,
+.site-header .services-toggle,
+.site-footer .social-icons a,
+.site-float,
+.mobile-contact .button,
+.site-page button,
+.site-page summary,
+.proof-primary-link,
+.proof-secondary-link {
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+.site-header .menu-toggle .icon {
+  transition: transform 240ms ease;
+}
+.site-header .menu-toggle[aria-expanded="true"] .icon {
+  transform: rotate(90deg);
+}
+.site-page .text-link .icon,
+.site-page .button .icon {
+  transition: transform 180ms ease;
+}
+@media (hover: hover) {
+  .site-footer .social-icons a:hover,
+  .site-float:hover {
+    transform: translateY(-3px);
+  }
+  .site-header .service-popover a:hover {
+    transform: translateX(3px);
+  }
+  .site-page .text-link:hover .icon,
+  .site-page .button:hover .icon {
+    transform: translateX(3px);
+  }
+}
+.site-page .button:active,
+.mobile-contact .button:active,
+.site-header .button:active,
+.site-header .menu-toggle:active,
+.site-footer .social-icons a:active {
+  transform: scale(0.97);
+}
+.site-page button:active {
+  scale: 0.97;
+}
+.site-page button {
+  transition-property:
+    background-color, color, border-color, box-shadow, transform, scale;
+}
+.site-page summary:hover {
+  color: var(--brand);
+}
+.testimoni-page #cerita-pelanggan,
+.testimoni-page #dokumentasi {
+  scroll-margin-top: 120px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .site-header *,
+  .site-footer *,
+  .site-float,
+  .mobile-contact *,
+  .site-page *,
+  .testimoni-page .proof-primary-link,
+  .testimoni-page .proof-secondary-link {
+    transition: none !important;
+    animation: none !important;
+  }
+}
