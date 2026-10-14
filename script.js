@@ -1,4 +1,4 @@
-function sendContactForm() {
+function getContactMessage() {
     // 1. Grab values from the HTML
     let layanan = document.getElementById("contact-layanan").value;
     let nama = document.getElementById("contact-nama").value.trim();
@@ -25,17 +25,17 @@ function sendContactForm() {
     // 5. Combine everything
     let finalMessage = `${greeting} ${coreIntent}${extraDetails}`;
 
-    // 6. Encode and send
-    let encodedMessage = encodeURIComponent(finalMessage);
-    let phoneNumber = "6281234567890"; // Remember to ensure this is your actual number
-    
-    let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    window.open(whatsappURL, "_blank");
+    return finalMessage;
+}
+
+function sendContactForm() {
+    const whatsappURL = `https://wa.me/6285102280001?text=${encodeURIComponent(getContactMessage())}`;
+    window.open(whatsappURL, '_blank', 'noopener,noreferrer');
 }
 function calculateJastip() {
     // 1. Get Inputs
-    const rmb = parseFloat(document.getElementById('calc-rmb').value) || 0;
-    const kg = parseFloat(document.getElementById('calc-kg').value) || 0;
+    const rmb = Math.max(0, parseFloat(document.getElementById('calc-rmb').value) || 0);
+    const kg = Math.max(0, parseFloat(document.getElementById('calc-kg').value) || 0);
     const shipRate = parseFloat(document.getElementById('calc-method').value);
     const kurs = 2700;
 
@@ -57,6 +57,10 @@ function calculateJastip() {
     document.getElementById('res-fee').innerText = "Rp " + Math.round(jastipFee).toLocaleString('id-ID');
     document.getElementById('res-ongkir').innerText = "Rp " + Math.round(ongkir).toLocaleString('id-ID');
     document.getElementById('res-total').innerText = "Rp " + Math.round(grandTotal).toLocaleString('id-ID');
+    const goods = document.getElementById('res-goods');
+    const feeLabel = document.getElementById('res-fee-percent');
+    if (goods) goods.innerText = 'Rp ' + Math.round(hargaBarangIDR).toLocaleString('id-ID');
+    if (feeLabel) feeLabel.innerText = `(${feePercent * 100}%)`;
 }
 
 // --- TOP UP PAGE LOGIC ---
@@ -69,13 +73,17 @@ async function initTopupPage() {
     // Only run this if we are actually on the Top Up page
     if (!document.getElementById('display-live-rate')) return;
 
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
     try {
         // Fetch the open exchange rate API (Base: CNY)
-        const response = await fetch('https://open.er-api.com/v6/latest/CNY');
+        const response = await fetch('https://open.er-api.com/v6/latest/CNY', { signal: controller.signal });
+        if (!response.ok) throw new Error('Rate request failed');
         const data = await response.json();
         
         // Get the raw IDR rate
-        const rawRate = data.rates.IDR; 
+        const rawRate = data.rates?.IDR;
+        if (!Number.isFinite(rawRate) || rawRate <= 0) throw new Error('Invalid exchange rate');
         
         // Add your 2% buffer/margin
         currentTopupRate = rawRate * 1.02; 
@@ -85,12 +93,19 @@ async function initTopupPage() {
         
         // If there's already a number in the calculator, run it
         calculateTopup();
+        const status = document.getElementById('rate-status');
+        if (status) status.innerText = 'Kurs berhasil dimuat · konfirmasi rate akhir ke admin';
 
     } catch (error) {
         console.error("Gagal mengambil rate:", error);
         // Fallback rate just in case the API goes down
         currentTopupRate = 2250; 
         document.getElementById('display-live-rate').innerText = "Rp 2.250 (Estimasi)";
+        const status = document.getElementById('rate-status');
+        if (status) status.innerText = 'Kurs belum tersedia · memakai rate estimasi';
+        calculateTopup();
+    } finally {
+        clearTimeout(timeout);
     }
 }
 
@@ -99,7 +114,7 @@ function calculateTopup() {
     const rmbInput = document.getElementById('topup-rmb');
     if (!rmbInput) return; // Exit if not on the page
 
-    const rmb = parseFloat(rmbInput.value) || 0;
+    const rmb = Math.max(0, parseFloat(rmbInput.value) || 0);
     
     // Safety check: ensure rate is loaded
     if (currentTopupRate === 0) return; 
@@ -108,7 +123,7 @@ function calculateTopup() {
     let feePercent = 0;
     if (rmb > 0 && rmb < 100) {
         feePercent = 0.10; // 10%
-    } else if (rmb >= 100 && rmb <= 999) {
+    } else if (rmb >= 100 && rmb < 1000) {
         feePercent = 0.02; // 2%
     } else if (rmb >= 1000) {
         feePercent = 0;    // 0% (Gratis)
@@ -370,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- GALLERY LIGHTBOX LOGIC (WITH ARROWS, AUTO-GENERATE & TAGS) ---
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. THE 121 TAGS LIST
+    // Tags follow the photo numbering: doc1.jpg is the first entry.
     const imageTags = [
         "packet", "fashion", "cosmetics", "marvis", "general", "fake nails", "pokemon", "bags", "general", "fashion",
         "general", "general", "general", "general, fashion", "general, fashion", "food", "general", "cosmetics", "fashion", "fashion",
@@ -383,7 +398,82 @@ document.addEventListener('DOMContentLoaded', () => {
         "general", "general", "fake nails", "general", "miscellaneous", "fashion", "miscellaneous", "diecast", "diecast", "miscellaneous",
         "fashion", "packet", "general", "general ,fashion", "general , electronics", "fashion", "general", "general", "general", "fake nails",
         "general", "general, fashion", "general", "general", "fashion", "fashion", "general, fashion", "jewelries", "general", "packet",
-        "general", "electronics", "fake nails", "fake nails", "pokemon", "general", "electronics", "fake nails", "electronics", "electronics", "electronics"
+        "general", "electronics", "fake nails", "fake nails", "pokemon", "general", "electronics", "fake nails", "electronics", "electronics", "electronics",
+        // Newly imported documentation: doc122.jpg through doc195.jpg.
+        "fashion", // doc122.jpg
+        "general, fashion, food, cosmetics", // doc123.jpg
+        "general, fashion", // doc124.jpg
+        "general, fake nails", // doc125.jpg
+        "general, fashion", // doc126.jpg
+        "fashion", // doc127.jpg
+        "general, fashion, jewelries, bags", // doc128.jpg
+        "fashion", // doc129.jpg
+        "jewelries", // doc130.jpg
+        "general, food, fake nails", // doc131.jpg
+        "fashion", // doc132.jpg
+        "cosmetics", // doc133.jpg
+        "general, food", // doc134.jpg
+        "general, fashion, food", // doc135.jpg
+        "fashion", // doc136.jpg
+        "fashion", // doc137.jpg
+        "general, fashion", // doc138.jpg
+        "fashion", // doc139.jpg
+        "general, fashion", // doc140.jpg
+        "general, fashion, pokemon", // doc141.jpg
+        "general, pokemon", // doc142.jpg
+        "electronics", // doc143.jpg
+        "electronics", // doc144.jpg
+        "electronics", // doc145.jpg
+        "general, fashion, fake nails", // doc146.jpg
+        "fake nails", // doc147.jpg
+        "fashion", // doc148.jpg
+        "general, bags, electronics", // doc149.jpg
+        "jewelries, electronics", // doc150.jpg
+        "jewelries", // doc151.jpg
+        "jewelries", // doc152.jpg
+        "miscellaneous", // doc153.jpg
+        "miscellaneous", // doc154.jpg
+        "general, fashion, pokemon", // doc155.jpg
+        "fashion", // doc156.jpg
+        "general, fashion", // doc157.jpg
+        "general, fashion, food, pokemon", // doc158.jpg
+        "pokemon", // doc159.jpg
+        "miscellaneous", // doc160.jpg
+        "pokemon", // doc161.jpg
+        "electronics", // doc162.jpg
+        "general", // doc163.jpg
+        "general, fashion, bags", // doc164.jpg
+        "general, bags, food, cosmetics", // doc165.jpg
+        "general, fashion", // doc166.jpg
+        "fashion", // doc167.jpg
+        "general, fashion, food", // doc168.jpg
+        "fashion", // doc169.jpg
+        "miscellaneous", // doc170.jpg
+        "miscellaneous", // doc171.jpg
+        "fashion, bags, food", // doc172.jpg
+        "miscellaneous", // doc173.jpg
+        "general, fashion, cosmetics", // doc174.jpg
+        "general, fashion, food", // doc175.jpg
+        "general, fashion, fake nails", // doc176.jpg
+        "general, fashion, fake nails", // doc177.jpg
+        "fashion", // doc178.jpg
+        "general, fashion, food, bags", // doc179.jpg
+        "fashion", // doc180.jpg
+        "general", // doc181.jpg
+        "general, cosmetics, pokemon", // doc182.jpg
+        "general, fashion", // doc183.jpg
+        "general, fashion, food", // doc184.jpg
+        "general, fashion, jewelries", // doc185.jpg
+        "general, fashion, bags", // doc186.jpg
+        "general, fashion, electronics", // doc187.jpg
+        "fashion", // doc188.jpg
+        "general, fashion, diecast", // doc189.jpg
+        "general, fashion, bags, electronics", // doc190.jpg
+        "general, cosmetics", // doc191.jpg
+        "fashion", // doc192.jpg
+        "fashion", // doc193.jpg
+        "fashion", // doc194.jpg
+        "general, fashion, jewelries, pokemon" // doc195.jpg
     ];
 
     // 2. AUTO-GENERATE PHOTOS & TAGS
@@ -422,26 +512,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.querySelector('.lightbox-prev');
     const nextBtn = document.querySelector('.lightbox-next');
     
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
     let currentIndex = 0;
 
     if (lightbox && galleryItems.length > 0) {
-        
+        const visibleItems = () => galleryItems.filter(item => !item.hidden);
+
         function showImage(index) {
-            const item = galleryItems[index];
+            const item = visibleItems()[index];
             const img = item.querySelector('img');
             const tagsContainer = item.querySelector('.gallery-tags-container');
             
             lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
             // Copies the same exact pill tags into the lightbox popup!
             lightboxCaption.innerHTML = tagsContainer.innerHTML; 
             currentIndex = index; 
         }
 
-        galleryItems.forEach((item, index) => {
+        galleryItems.forEach(item => {
             item.addEventListener('click', () => {
                 lightbox.style.display = 'block';
-                showImage(index);
+                showImage(visibleItems().indexOf(item));
             });
         });
 
@@ -452,14 +544,14 @@ document.addEventListener('DOMContentLoaded', () => {
         prevBtn.addEventListener('click', (e) => {
             e.stopPropagation(); 
             let newIndex = currentIndex - 1;
-            if (newIndex < 0) newIndex = galleryItems.length - 1; 
+            if (newIndex < 0) newIndex = visibleItems().length - 1;
             showImage(newIndex);
         });
 
         nextBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             let newIndex = currentIndex + 1;
-            if (newIndex >= galleryItems.length) newIndex = 0; 
+            if (newIndex >= visibleItems().length) newIndex = 0;
             showImage(newIndex);
         });
 

@@ -1,147 +1,274 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="id">
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us | Jastipinaja.cn</title>
-    <!-- Pointing to Others_Photo -->
-    <link rel="icon" type="image/png" href="Others_Photo/logo_notext.png" />
-    <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-    
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="/">
-                <!-- Pointing to Others_Photo -->
-                <img src="Others_Photo/logo.png" alt="Jastipinaja Logo" class="nav-logo">
-            </a>
-        </div>
-        
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        
-        <ul class="nav-links">
-            <li><a href="/">Home Page</a></li>
-            <li class="dropdown">
-                <a href="/#services" class="dropbtn">Our Services ▾</a>
-                <div class="dropdown-content">
-                    <a href="checkout">Jasa Titip Beli & Kirim (All-in)</a>
-                    <a href="forwarding">Jasa Kirim & Forwarding</a>
-                    <a href="topup">Jasa Top-up RMB & Alipay</a>
-                </div>
-            </li>
-            <li><a href="faq">FAQ</a></li>
-            <li><a href="testimoni">Testimoni</a></li>
-            <li><a href="contact" class="nav-contact-btn">Contact Us</a></li>
-        </ul>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <header class="hero" style="padding: 60px 20px">
-        <h1 style="font-size: 2.5rem">Hubungi Kami</h1>
-        <p>Ada pertanyaan? Silakan isi form di bawah ini dan kami akan segera membalas via WhatsApp.</p>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Konsultasikan kebutuhan belanja, pengiriman, dan top-up RMB dengan admin Jastipinaja melalui WhatsApp."
+    />
+    <meta name="theme-color" content="#0056b3" />
+    <title>Hubungi kami | Jastipinaja.cn</title>
+    <link rel="icon" href="Others_Photo/logo_notext.png" type="image/png" />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body class="site-page page-contact">
+    <a class="skip-link" href="#main">Langsung ke konten</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="/"
+          ><span class="brand-mark"
+            ><img
+              src="Others_Photo/logo_notext.png"
+              alt=""
+              width="43"
+              height="43" /></span
+          ><span class="brand-name">Jastipinaja<small>.cn</small></span></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+          aria-controls="site-menu"
+        >
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav class="site-nav" id="site-menu" aria-label="Navigasi utama">
+          <a href="/">Beranda</a>
+          <div class="services-menu">
+            <button
+              type="button"
+              class="services-toggle"
+              aria-expanded="false"
+              aria-controls="service-menu"
+            >
+              Layanan
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div class="service-popover" id="service-menu" hidden>
+              <a href="checkout"
+                ><strong>Titip beli & kirim</strong
+                ><span>Belanja dari China, kami urus semuanya.</span></a
+              ><a href="forwarding"
+                ><strong>Kirim & forwarding</strong
+                ><span>Sudah belanja? Kami bantu pengiriman.</span></a
+              ><a href="topup"
+                ><strong>Top-up RMB & Alipay</strong
+                ><span>Isi saldo atau bayar supplier China.</span></a
+              >
+            </div>
+          </div>
+          <a href="testimoni">Testimoni</a><a href="faq">FAQ</a
+          ><a class="button" href="contact" aria-current="page"
+            >Hubungi kami
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" /></svg
+          ></a>
+        </nav>
+      </div>
     </header>
-
-    <!-- CONTACT FORM SECTION -->
-    <section class="contact-page-container">
-        <div class="contact-form-card">
-            
-            <div class="form-group">
-                <label for="contact-layanan">Saya ingin bertanya tentang:</label>
-                <select id="contact-layanan">
-                    <option value="Jasa titip beli/checkout">Jasa Titip Beli & Kirim (All-in)</option>
-                    <option value="Jasa Kirim/Forwarding">Jasa Kirim & Forwarding</option>
-                    <option value="Jasa top up Alipay/CNY">Jasa Top-up RMB & Alipay</option>
-                    <option value="Layanan Lainnya">Layanan Lainnya</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="contact-nama">Nama Anda (Opsional):</label>
-                <input type="text" id="contact-nama" placeholder="Ketik nama Anda di sini..." />
-            </div>
-
-            <div class="form-group">
-                <label for="contact-pesan">Detail Pertanyaan (Opsional):</label>
-                <textarea 
-                    id="contact-pesan" 
-                    rows="5" 
-                    placeholder="Ceritakan lebih detail apa yang ingin Anda tanyakan atau butuhkan..."
-                ></textarea>
-            </div>
-
-            <button onclick="sendContactForm()" class="whatsapp-btn form-submit-btn">Kirim ke WhatsApp</button>
+    <main id="main">
+      <header class="compact-hero">
+        <div class="wrap">
+          <span class="eyebrow">HUBUNGI KAMI</span>
+          <h1>Mulai dengan cerita<br />kebutuhan Anda.</h1>
+          <p class="lead">
+            Belum tahu layanan yang cocok? Pilih topik, tulis pertanyaan, dan
+            lanjutkan percakapan melalui WhatsApp.
+          </p>
         </div>
-    </section>
-
-    <!-- FLOATING WHATSAPP BUTTON (Updated with correct phone number) -->
-    <a href="https://wa.me/6285102280001?text=Halo%20Jastipinajacn,%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda" class="floating-wa-btn" target="_blank">
-        <!-- Pointing to Footer_Photo -->
-        <img src="Footer_Photo/whatsapp_logo.png" alt="Chat WhatsApp" />
-    </a>
-        
-    <!-- FOOTER -->
-    <footer class="main-footer">
-        <div class="footer-container">
-            
-            <div class="footer-col">
-                <h3>Layanan Kami</h3>
-                <ul class="footer-links">
-                    <li><a href="checkout">Jasa Titip Beli & Kirim (All-in)</a></li>
-                    <li><a href="forwarding">Jasa Kirim & Forwarding</a></li>
-                    <li><a href="topup">Jasa Top-up RMB & Alipay</a></li>
-                </ul>
-                <h3 class="mt-20">Jam Operasional</h3>
-                <p>🕒 09:00 - 22:00 (Senin - Minggu)</p>
+      </header>
+      <section class="section">
+        <div class="wrap contact-layout">
+          <aside class="contact-info">
+            <div>
+              <h2>Kami siap membantu.</h2>
+              <p>
+                Mulai dari cari barang sampai memilih pengiriman, Anda bisa
+                berdiskusi langsung dengan admin.
+              </p>
             </div>
-
-            <div class="footer-col">
-                <h3>Hubungi Kami</h3>
-                <p class="footer-address">📍 Jl. Madrasah No.1a, RT.1/RW.3, Gandaria Sel., Kec. Cilandak, Kota Jakarta Selatan, DKI Jakarta 12420</p>
-                
-                <div class="footer-contact-links">
-                    <a href="https://wa.me/6285102280001" target="_blank">
-                        <!-- Pointing to Footer_Photo -->
-                        <img src="Footer_Photo/whatsapp_logo.png" alt="WA" class="small-icon"> Joshua (+62 851 0228 0001)
-                    </a>
-                    <a href="#" target="_blank">
-                        <!-- Pointing to Footer_Photo -->
-                        <img src="Footer_Photo/group.png" alt="WA Group" class="small-icon"> Whatsapp Group Jastipinajacn
-                    </a>
-                </div>
-
-                <h3 class="mt-20">Ikuti Kami</h3>
-                <div class="social-icons">
-                    <!-- Pointing to Footer_Photo -->
-                    <a href="#"><img src="Footer_Photo/instagram.png" alt="Instagram"></a>
-                    <a href="#"><img src="Footer_Photo/facebook.png" alt="Facebook"></a>
-                    <a href="#"><img src="Footer_Photo/threads.png" alt="Threads"></a>
-                    <a href="#"><img src="Footer_Photo/shopee.png" alt="Shopee"></a>
-                </div>
+            <div class="contact-method">
+              <span class="icon-tile"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M21 11a9 9 0 0 1-9 9 10 10 0 0 1-4-.8L3 21l1.8-5A9 9 0 1 1 21 11Z"
+                  />
+                  <path d="M8 11h8M8 7h5" /></svg
+              ></span>
+              <div>
+                <h3>WhatsApp Joshua</h3>
+                <p>
+                  <a
+                    href="https://wa.me/6285102280001?text=Halo%20Jastipinajacn%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda."
+                    >+62 851 0228 0001</a
+                  >
+                </p>
+                <p>Untuk konsultasi dan pemesanan.</p>
+              </div>
             </div>
-
-            <div class="footer-col">
-                <h3>E-commerce China</h3>
-                <!-- Pointing to Footer_Photo -->
-                <img src="Footer_Photo/ecommerce.png" alt="Partner E-commerce" class="footer-landscape-img">
-                
-                <h3 class="mt-20">Pembayaran</h3>
-                <!-- Pointing to Footer_Photo -->
-                <img src="Footer_Photo/bank.png" alt="Metode Pembayaran" class="footer-landscape-img">
+            <div class="contact-method">
+              <span class="icon-tile"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" /></svg
+              ></span>
+              <div>
+                <h3>Jam operasional</h3>
+                <p>09:00–22:00<br />Senin–Minggu</p>
+              </div>
             </div>
-
+            <div class="contact-method">
+              <span class="icon-tile"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" />
+                  <circle cx="12" cy="10" r="2.5" /></svg
+              ></span>
+              <div>
+                <h3>Alamat Jakarta</h3>
+                <p>
+                  Jl. Madrasah No.1a, RT.1/RW.3, Gandaria Selatan, Cilandak,
+                  Jakarta Selatan, DKI Jakarta 12420
+                </p>
+              </div>
+            </div>
+          </aside>
+          <form class="calc-shell" id="contact-form">
+            <div class="contact-form-title">
+              <h2>Apa yang bisa kami bantu?</h2>
+              <p>Pesan Anda akan disiapkan untuk dikirim melalui WhatsApp.</p>
+            </div>
+            <div class="field">
+              <label for="contact-layanan">Pilih layanan</label
+              ><select id="contact-layanan">
+                <option
+                  value="Jasa titip beli/checkout"
+                  data-service="checkout"
+                >
+                  Titip beli & kirim (all-in)
+                </option>
+                <option value="Jasa Kirim/Forwarding" data-service="forwarding">
+                  Kirim & forwarding
+                </option>
+                <option value="Jasa top up Alipay/CNY" data-service="topup">
+                  Top-up RMB & Alipay
+                </option>
+                <option value="Layanan Lainnya" data-service="other">
+                  Belum yakin / lainnya
+                </option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="contact-nama">Nama Anda <span>Opsional</span></label
+              ><input
+                id="contact-nama"
+                type="text"
+                autocomplete="name"
+                maxlength="100"
+                placeholder="Nama panggilan Anda"
+              />
+            </div>
+            <div class="field">
+              <label for="contact-pesan"
+                >Ceritakan kebutuhan Anda <span>Opsional</span></label
+              ><textarea
+                id="contact-pesan"
+                rows="5"
+                maxlength="3000"
+                placeholder="Contoh: ingin titip beli dari Taobao, perkiraan 2 kg. Bisa bantu hitung biayanya?"
+              ></textarea
+              ><small
+                >Anda juga bisa mengirim link, foto, atau QR setelah percakapan
+                WhatsApp terbuka.</small
+              >
+            </div>
+            <details class="message-preview">
+              <summary>Lihat pesan yang akan dikirim</summary>
+              <pre id="contact-preview"></pre>
+            </details>
+            <button class="button" type="submit">
+              Lanjut ke WhatsApp
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </button>
+            <p class="calc-note">
+              WhatsApp akan terbuka dengan pesan yang sudah terisi. Tekan kirim
+              di WhatsApp untuk memulai percakapan.
+            </p>
+          </form>
         </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Jastipinaja.cn. All Rights Reserved.</p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/"
+            ><span class="brand-mark"
+              ><img
+                src="Others_Photo/logo_notext.png"
+                alt=""
+                width="43"
+                height="43" /></span
+            ><span class="brand-name">Jastipinaja<small>.cn</small></span></a
+          >
+          <p>
+            Belanja, kirim, dan bayar dari China ke Indonesia. Satu tempat untuk
+            kebutuhan jastip Anda.
+          </p>
+          <img
+            class="footer-payments"
+            src="Footer_Photo/bank.png"
+            alt="Metode pembayaran"
+            loading="lazy"
+          />
         </div>
+        <div>
+          <h2>Jelajahi layanan</h2>
+          <div class="footer-list">
+            <a href="checkout">Titip beli & kirim</a
+            ><a href="forwarding">Kirim & forwarding</a
+            ><a href="topup">Top-up RMB & Alipay</a
+            ><a href="testimoni">Testimoni & dokumentasi</a
+            ><a href="faq">Pertanyaan umum</a>
+          </div>
+        </div>
+        <div>
+          <h2>Mari terhubung</h2>
+          <div class="footer-list">
+            <a
+              href="https://wa.me/6285102280001?text=Halo%20Jastipinajacn%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda."
+              >Joshua · +62 851 0228 0001</a
+            ><span>09:00–22:00 · Senin–Minggu</span>
+          </div>
+          <p>
+            Jl. Madrasah No.1a, RT.1/RW.3, Gandaria Selatan, Cilandak, Jakarta
+            Selatan, DKI Jakarta 12420
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom-new">
+        <span>© 2026 Jastipinaja.cn. All rights reserved.</span
+        ><span>China → Indonesia</span>
+      </div>
     </footer>
-
+    <a
+      class="site-float"
+      href="https://wa.me/6285102280001?text=Halo%20Jastipinajacn%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat di WhatsApp"
+      ><img src="Footer_Photo/whatsapp_logo.png" alt=""
+    /></a>
+    <div class="mobile-contact">
+      <a class="button" href="contact">Konsultasikan kebutuhan Anda →</a>
+    </div>
     <script src="script.js"></script>
-</body>
+    <script src="site.js"></script>
+  </body>
 </html>

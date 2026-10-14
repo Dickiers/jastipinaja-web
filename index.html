@@ -1,304 +1,490 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page | Jastipinaja.cn</title>
-    <!-- Pointing to Others_Photo -->
-    <link rel="icon" type="image/png" href="Others_Photo/logo_notext.png">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="/">
-                <!-- Pointing to Others_Photo -->
-                <img src="Others_Photo/logo.png" alt="Jastipinaja Logo" class="nav-logo">
-            </a>
-        </div>
-        
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        
-        <ul class="nav-links">
-            <li><a href="/">Home Page</a></li>
-            <li class="dropdown">
-                <a href="/#services" class="dropbtn">Our Services ▾</a>
-                <div class="dropdown-content">
-                    <a href="checkout">Jasa Titip Beli & Kirim (All-in)</a>
-                    <a href="forwarding">Jasa Kirim & Forwarding</a>
-                    <a href="topup">Jasa Top-up RMB & Alipay</a>
-                </div>
-            </li>
-            <li><a href="faq">FAQ</a></li>
-            <li><a href="testimoni">Testimoni</a></li>
-            <li><a href="contact" class="nav-contact-btn">Contact Us</a></li>
-        </ul>
-    </nav>
-
-    <!-- HERO CAROUSEL SECTION -->
-    <header class="hero-carousel">
-        <div class="carousel-track-container">
-            <ul class="carousel-track">
-                
-                <li class="carousel-slide">
-                    <div class="slide-content">
-                        <h1>Jastipinaja.cn</h1>
-                        <p>Solusi terpercaya dan praktis untuk segala kebutuhan impor barang Anda dari China ke Indonesia. Kami mempermudah proses belanja, pengiriman, dan pembayaran antar negara.</p>
-                        <a href="#services" class="hero-btn" style="background-color: #f0f4f8; color: #0056b3;">Lihat Layanan Kami</a>
-                    </div>
-                </li>
-                
-                <li class="carousel-slide">
-                    <div class="slide-content">
-                        <h1>Impor Barang China 100% Aman</h1>
-                        <p>Dari Taobao, 1688, hingga Pinduoduo. Kami urus semua dari proses negosiasi, checkout, sampai barang tiba di depan pintu Anda. All-In Tax & Bea Cukai.</p>
-                        <a href="checkout" class="hero-btn">Mulai Belanja</a>
-                    </div>
-                </li>
-                
-                <li class="carousel-slide">
-                    <div class="slide-content">
-                        <h1>Top Up RMB & Bayar Supplier</h1>
-                        <p>Isi saldo Alipay, WeChat Pay, atau transfer langsung ke rekening bank China. Transaksi instan dengan rate transparan.</p>
-                        <a href="topup" class="hero-btn">Cek Rate Hari Ini</a>
-                    </div>
-                </li>
-
-            </ul>
-        </div>
-        
-        <button class="carousel-btn prev-btn">&#10094;</button>
-        <button class="carousel-btn next-btn">&#10095;</button>
-        
-        <div class="carousel-nav">
-            <button class="carousel-indicator current-indicator"></button>
-            <button class="carousel-indicator"></button>
-            <button class="carousel-indicator"></button>
-        </div>
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Layanan titip beli, forwarding, dan top-up RMB dari China ke Indonesia. Pilih layanan dan konsultasikan kebutuhan Anda."
+    />
+    <meta name="theme-color" content="#0056b3" />
+    <title>Belanja dari China, kami bantu sampai | Jastipinaja.cn</title>
+    <link rel="icon" href="Others_Photo/logo_notext.png" type="image/png" />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body class="site-page page-index">
+    <a class="skip-link" href="#main">Langsung ke konten</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="/"
+          ><span class="brand-mark"
+            ><img
+              src="Others_Photo/logo_notext.png"
+              alt=""
+              width="43"
+              height="43" /></span
+          ><span class="brand-name">Jastipinaja<small>.cn</small></span></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+          aria-controls="site-menu"
+        >
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav class="site-nav" id="site-menu" aria-label="Navigasi utama">
+          <a href="/" aria-current="page">Beranda</a>
+          <div class="services-menu">
+            <button
+              type="button"
+              class="services-toggle"
+              aria-expanded="false"
+              aria-controls="service-menu"
+            >
+              Layanan
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div class="service-popover" id="service-menu" hidden>
+              <a href="checkout"
+                ><strong>Titip beli & kirim</strong
+                ><span>Belanja dari China, kami urus semuanya.</span></a
+              ><a href="forwarding"
+                ><strong>Kirim & forwarding</strong
+                ><span>Sudah belanja? Kami bantu pengiriman.</span></a
+              ><a href="topup"
+                ><strong>Top-up RMB & Alipay</strong
+                ><span>Isi saldo atau bayar supplier China.</span></a
+              >
+            </div>
+          </div>
+          <a href="testimoni">Testimoni</a><a href="faq">FAQ</a
+          ><a class="button" href="contact"
+            >Hubungi kami
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" /></svg
+          ></a>
+        </nav>
+      </div>
     </header>
-
-    <!-- SERVICES SECTION -->
-    <section id="services" class="services-container">
-        
-        <div class="service-card">
-            <div class="card-bg-image service-img-1"></div>
-            <div class="card-content">
-                <h3>Jasa Titip Beli & Kirim (All-in)</h3>
-                <p>Kami membantu Anda membeli barang dari berbagai platform e-commerce di China secara langsung. Anda cukup memberikan link produk yang diinginkan, dan tim kami akan mengurus seluruh proses checkout dan negosiasi dengan supplier untuk Anda.</p>
-                <a href="checkout" class="learn-more-btn">Learn More</a>
+    <main id="main">
+      <header class="home-hero">
+        <div class="wrap">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">CHINA KE INDONESIA</span>
+              <h1>Barang pilihan Anda.<br /><em>Kami bantu sampai.</em></h1>
+              <p class="lead">
+                Dari titip beli, pengiriman, sampai pembayaran supplier. Urus
+                kebutuhan belanja dari China bersama Jastipinaja.
+              </p>
+              <div class="actions">
+                <a class="button" href="#services"
+                  >Temukan layanan Anda<svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6" /></svg></a
+                ><a class="button secondary" href="contact"
+                  >Konsultasi dulu<svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                ></a>
+              </div>
+              <div class="hero-caption">
+                <span
+                  ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z" />
+                    <path d="m8 12 3 3 5-6" /></svg
+                  >Ongkir all-in pajak</span
+                ><span
+                  ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M21 11a9 9 0 0 1-9 9 10 10 0 0 1-4-.8L3 21l1.8-5A9 9 0 1 1 21 11Z"
+                    />
+                    <path d="M8 11h8M8 7h5" /></svg
+                  >Konsultasi via WhatsApp</span
+                >
+              </div>
             </div>
+            <div class="hero-photo">
+              <img
+                src="Testi_Photo/doc1.jpg"
+                alt="Paket pelanggan Jastipinaja yang siap dikirim"
+                fetchpriority="high"
+              />
+              <div class="route-card">
+                <div><small>DARI</small><strong>China</strong></div>
+                <div class="route-line">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m22 2-7 20-4-9-9-4 20-7ZM11 13l6-6" />
+                  </svg>
+                </div>
+                <div><small>MENUJU</small><strong>Indonesia</strong></div>
+              </div>
+            </div>
+          </div>
+          <div class="platform-strip">
+            <span>Belanja dari platform pilihan Anda</span>
+            <div class="platform-names">
+              <span>Taobao</span><span>1688</span><span>Alibaba</span
+              ><span>Pinduoduo</span>
+            </div>
+          </div>
         </div>
-
-        <div class="service-card reverse">
-            <div class="card-bg-image service-img-2"></div>
-            <div class="card-content">
-                <h3>Jasa Kirim & Forwarding</h3>
-                <p>Layanan pengiriman barang dari gudang kami di China langsung ke alamat Anda di Indonesia. Kami mengurus seluruh proses logistik internasional dan bea cukai, sehingga Anda cukup bersantai menunggu paket tiba dengan aman di depan pintu Anda.</p>
-                <a href="forwarding" class="learn-more-btn">Learn More</a>
+      </header>
+      <section class="section" id="services">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">LAYANAN KAMI</span>
+              <h2>Satu tujuan. Tiga cara kami membantu.</h2>
             </div>
+            <p>
+              Pilih layanan sesuai tahap belanja Anda. Belum yakin? Ceritakan
+              kebutuhan Anda kepada admin.
+            </p>
+          </div>
+          <div class="service-cards">
+            <article class="service-panel">
+              <span class="service-number">01</span
+              ><span class="icon-tile"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M5 7h14l2 14H3L5 7ZM8 7V5a4 4 0 0 1 8 0v2"
+                  /></svg></span
+              ><span class="service-for">BELUM BELANJA?</span>
+              <h3>Titip beli<br />& kirim</h3>
+              <p>
+                Kirim link produk, lalu kami bantu checkout dan kirim barang
+                sampai Indonesia.
+              </p>
+              <a class="text-link" href="checkout"
+                >Lihat layanan
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg
+              ></a>
+            </article>
+            <article class="service-panel">
+              <span class="service-number">02</span
+              ><span class="icon-tile"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m22 2-7 20-4-9-9-4 20-7ZM11 13l6-6" /></svg></span
+              ><span class="service-for">SUDAH PUNYA BARANG?</span>
+              <h3>Kirim<br />& forwarding</h3>
+              <p>
+                Belanja sendiri, kirim ke alamat China kami, dan pilih metode
+                pengiriman Anda.
+              </p>
+              <a class="text-link" href="forwarding"
+                >Lihat layanan
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg
+              ></a>
+            </article>
+            <article class="service-panel">
+              <span class="service-number">03</span
+              ><span class="icon-tile"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M20 8V5H5a2 2 0 0 1 0-4h14M5 5H3v16h17V8H5ZM16 11h6v6h-6z"
+                  /></svg></span
+              ><span class="service-for">PERLU BAYAR DALAM RMB?</span>
+              <h3>Top-up RMB<br />& Alipay</h3>
+              <p>
+                Isi saldo Alipay atau WeChat Pay, atau lakukan pembayaran ke
+                supplier China.
+              </p>
+              <a class="text-link" href="topup"
+                >Lihat layanan
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg
+              ></a>
+            </article>
+          </div>
         </div>
-
-        <div class="service-card">
-            <div class="card-bg-image service-img-3"></div>
-            <div class="card-content">
-                <h3>Jasa Top-up RMB & Alipay</h3>
-                <p>Butuh saldo RMB untuk melakukan transaksi Anda sendiri di platform China? Kami menyediakan layanan pengisian saldo Alipay atau pembayaran langsung dalam mata uang CNY dengan rate yang transparan dan proses yang cepat.</p>
-                <a href="topup" class="learn-more-btn">Learn More</a>
+      </section>
+      <section class="section wash">
+        <div class="wrap split-section">
+          <div class="photo-stack">
+            <img
+              src="Testi_Photo/doc122.jpg"
+              alt="Dokumentasi pakaian pelanggan yang dibeli dari China"
+              loading="lazy"
+            />
+            <div class="photo-note">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="m12 3 9 5-9 5-9-5 9-5ZM3 8v9l9 5 9-5V8M12 13v9M7.5 5.5l9 5"
+                /></svg
+              >Dokumentasi asli barang pelanggan kami
             </div>
+          </div>
+          <div>
+            <span class="eyebrow">LEBIH MUDAH, DARI AWAL</span>
+            <h2>Anda pilih barangnya.<br />Kami bantu prosesnya.</h2>
+            <div class="benefit-list">
+              <div class="benefit">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M21 11a9 9 0 0 1-9 9 10 10 0 0 1-4-.8L3 21l1.8-5A9 9 0 1 1 21 11Z"
+                  />
+                  <path d="M8 11h8M8 7h5" />
+                </svg>
+                <div>
+                  <h3>Admin yang bisa diajak berdiskusi</h3>
+                  <p>
+                    Konsultasikan produk, metode kirim, dan estimasi biaya
+                    sebelum memesan.
+                  </p>
+                </div>
+              </div>
+              <div class="benefit">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z" />
+                  <path d="m8 12 3 3 5-6" />
+                </svg>
+                <div>
+                  <h3>Tarif kirim sudah all-in</h3>
+                  <p>
+                    Handcarry, air freight, dan sea cargo sudah termasuk pajak
+                    dan bea cukai.
+                  </p>
+                </div>
+              </div>
+              <div class="benefit">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+                <div>
+                  <h3>Pengiriman sesuai kebutuhan</h3>
+                  <p>
+                    Pilih waktu kirim dan biaya yang cocok untuk barang Anda.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="text-link" href="testimoni"
+                >Lihat bukti pengiriman
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" /></svg
+              ></a>
+            </div>
+          </div>
         </div>
-
-    </section>
-
-    <!-- TESTIMONIAL SECTION -->
-    <section class="testimonial-section">
-        <h2 class="section-title">Apa Kata Mereka?</h2>
-
-        <div class="testi-wrapper">
-            <button class="testi-btn prev-testi">&#10094;</button>
-            
-            <div class="testi-track-container">
-            <ul class="testi-track">
-                <!-- Note: Your CSS uses .img-testi-1 classes, ensure your CSS background-image paths are updated in style.css to point to Testi_Card_Photo/ -->
-                
-                <li class="testi-card active">
-                <div class="testi-bg-image img-testi-1"></div>
-                <div class="testi-content">
-                    <h4 class="cust-name">Dicky</h4>
-                    <span class="item-name">Italian Charm Bracelet</span>
-                    <p class="testi-text">
-                    "Sangat membantu! Karena saya jualan barang trending, butuh barang sampai dengan cepat. Jastipinaja
-                    bisa bantu belikan dan bawa barang saya ke Jakarta kurang dari seminggu sudah sampai."
-                    </p>
-                </div>
-                </li>
-                
-                <li class="testi-card">
-                <div class="testi-bg-image img-testi-2"></div>
-                <div class="testi-content">
-                    <h4 class="cust-name">Gloria</h4>
-                    <span class="item-name">Kuku Palsu (Nail Art)</span>
-                    <p class="testi-text">
-                    "Kulakan kuku palsu dari China sekarang jauh lebih mudah. Admin Jastipinaja sangat teliti bantu cek
-                    pesanan partai besar saya sebelum dikirim. Barang sampai aman dan bebas pusing urus bea cukai!"
-                    </p>
-                </div>
-                </li>
-                
-                <li class="testi-card">
-                <div class="testi-bg-image img-testi-3"></div>
-                <div class="testi-content">
-                    <h4 class="cust-name">Eavan</h4>
-                    <span class="item-name">Susu Formula</span>
-                    <p class="testi-text">
-                    "Awalnya ragu kirim banyak karena ini bahan makanan. Ternyata Jastipinaja bisa bantu bawa pakai
-                    handcarry. Kalengnya selalu datang mulus, tidak ada yang penyok sama sekali!"
-                    </p>
-                </div>
-                </li>
-                
-                <li class="testi-card">
-                <div class="testi-bg-image img-testi-4"></div>
-                <div class="testi-content">
-                    <h4 class="cust-name">Riki</h4>
-                    <span class="item-name">Baju Branded</span>
-                    <p class="testi-text">
-                    "Agen kirim lain jarang ada yang mau terima bantu bawa baju branded. Tapi di sini mereka berani terima
-                    dan selama ini aman, tidak pernah kena masalah. Barang juga selalu sampai tepat waktu."
-                    </p>
-                </div>
-                </li>
-                
-                <li class="testi-card">
-                <div class="testi-bg-image img-testi-5"></div>
-                <div class="testi-content">
-                    <h4 class="cust-name">Fera</h4>
-                    <span class="item-name">Blindbox & Figurines</span>
-                    <p class="testi-text">
-                    "Sering PO Pop Mart dan blindbox langka pakai Jastipinaja. Yang bikin tenang, box-nya selalu utuh dan
-                    aman sampai tujuan. Estimasi waktu juga akurat, jadi customer saya tidak nunggu lama."
-                    </p>
-                </div>
-                </li>
-
-                <!-- NEW TESTIMONIALS BELOW -->
-
-                <li class="testi-card">
-                <div class="testi-bg-image img-testi-6"></div>
-                <div class="testi-content">
-                    <h4 class="cust-name">Monica</h4>
-                    <span class="item-name">Jewelries</span>
-                    <p class="testi-text">
-                    "Awalnya sempat ragu dan takut untuk titip perhiasan via handcarry. Tapi selama dibantu oleh Jastipinaja, prosesnya selalu lancar tanpa kendala. Barang yang dibawa juga selalu tiba dalam kondisi utuh dan komplit!"
-                    </p>
-                </div>
-                </li>
-
-                <li class="testi-card">
-                <div class="testi-bg-image img-testi-7"></div>
-                <div class="testi-content">
-                    <h4 class="cust-name">Daniel</h4>
-                    <span class="item-name">Kartu Pokemon</span>
-                    <p class="testi-text">
-                    "Kartu koleksi yang saya titipkan tergolong barang sensitif dan rawan rusak. Untungnya pakai Jastipinaja selalu aman via handcarry. Pengirimannya juga sangat cepat, selalu dalam seminggu barang sudah sampai di Indonesia."
-                    </p>
-                </div>
-                </li>
-
-                <li class="testi-card">
-                <div class="testi-bg-image img-testi-8"></div>
-                <div class="testi-content">
-                    <h4 class="cust-name">Jansen</h4>
-                    <span class="item-name">Barang Elektronik</span>
-                    <p class="testi-text">
-                    "Pelayanan Jastipinaja sangat solutif. Admin selalu bantu merekomendasikan apakah barang elektronik saya lebih baik dikirim via handcarry atau kargo laut. Estimasi waktu tibanya juga selalu on-time, tidak pernah meleset!"
-                    </p>
-                </div>
-                </li>
-
-            </ul>
+      </section>
+      <section class="section" id="cara-order">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">CARA MULAI</span>
+              <h2>Dari link produk sampai barang tiba.</h2>
             </div>
-            
-            <button class="testi-btn next-testi">&#10095;</button>
+          </div>
+          <div class="step-grid">
+            <article class="step">
+              <span class="step-num">01</span>
+              <div>
+                <h3>Kirim link atau foto</h3>
+                <p>
+                  Bagikan link dari Taobao, 1688, Pinduoduo, atau foto barang
+                  yang ingin dicari.
+                </p>
+              </div>
+            </article>
+            <article class="step">
+              <span class="step-num">02</span>
+              <div>
+                <h3>Konfirmasi & bayar</h3>
+                <p>
+                  Admin menghitung total biaya. Setelah sepakat, bayar harga
+                  barang untuk mulai belanja.
+                </p>
+              </div>
+            </article>
+            <article class="step">
+              <span class="step-num">03</span>
+              <div>
+                <h3>Pilih pengiriman</h3>
+                <p>
+                  Tentukan handcarry, air freight, atau sea cargo sesuai
+                  kebutuhan Anda.
+                </p>
+              </div>
+            </article>
+            <article class="step">
+              <span class="step-num">04</span>
+              <div>
+                <h3>Terima barang</h3>
+                <p>
+                  Kami urus checkout, penerimaan di China, dan pengiriman ke
+                  Indonesia.
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
-    </section>
-
-    <!-- CTA SECTION (Updated Number) -->
-    <section id="contact" class="cta-section">
-        <h2>Ready to Order?</h2>
-        <p>Hubungi kami langsung melalui WhatsApp untuk konsultasi dan pemesanan.</p>
-        <a href="https://wa.me/6285102280001?text=Halo%20Jastipinajacn,%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda" class="whatsapp-btn">Chat on WhatsApp</a>
-    </section>
-
-    <!-- FLOATING WHATSAPP BUTTON (Updated Number & Path) -->
-    <a href="https://wa.me/6285102280001?text=Halo%20Jastipinajacn,%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda" class="floating-wa-btn" target="_blank">
-        <img src="Footer_Photo/whatsapp_logo.png" alt="Chat WhatsApp">
-    </a>
-
-    <!-- FOOTER -->
-    <footer class="main-footer">
-        <div class="footer-container">
-            
-            <div class="footer-col">
-                <h3>Layanan Kami</h3>
-                <ul class="footer-links">
-                    <li><a href="checkout">Jasa Titip Beli & Kirim (All-in) </a></li>
-                    <li><a href="forwarding">Jasa Kirim & Forwarding</a></li>
-                    <li><a href="topup">Jasa Top-up RMB & Alipay</a></li>
-                </ul>
-                <h3 class="mt-20">Jam Operasional</h3>
-                <p>🕒 09:00 - 22:00 (Senin - Minggu)</p>
+      </section>
+      <section class="section wash">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">CERITA PELANGGAN</span>
+              <h2>Mereka sudah mencoba.</h2>
             </div>
-
-            <div class="footer-col">
-                <h3>Hubungi Kami</h3>
-                <p class="footer-address">📍 Jl. Madrasah No.1a, RT.1/RW.3, Gandaria Sel., Kec. Cilandak, Kota Jakarta Selatan, DKI Jakarta 12420</p>
-                
-                <div class="footer-contact-links">
-                    <a href="https://wa.me/6285102280001" target="_blank">
-                        <!-- Pointing to Footer_Photo -->
-                        <img src="Footer_Photo/whatsapp_logo.png" alt="WA" class="small-icon"> Joshua (+62 851 0228 0001)
-                    </a>
-                    <a href="#" target="_blank">
-                        <!-- Pointing to Footer_Photo -->
-                        <img src="Footer_Photo/group.png" alt="WA Group" class="small-icon"> Whatsapp Group Jastipinajacn
-                    </a>
+            <p>
+              Dari barang jualan sampai koleksi pribadi, lihat pengalaman
+              pelanggan kami.
+            </p>
+          </div>
+          <div class="review-grid">
+            <article class="review-card">
+              <span class="quote-mark" aria-hidden="true">“</span>
+              <blockquote>
+                Sangat membantu! Karena saya jualan barang trending, butuh
+                barang sampai dengan cepat. Jastipinaja bisa bantu belikan dan
+                bawa barang saya ke Jakarta kurang dari seminggu sudah sampai.
+              </blockquote>
+              <div class="review-person">
+                <span class="avatar">D</span>
+                <div>
+                  <strong>Dicky</strong><small>Italian Charm Bracelet</small>
                 </div>
-
-                <h3 class="mt-20">Ikuti Kami</h3>
-                <div class="social-icons">
-                    <!-- Pointing to Footer_Photo -->
-                    <a href="#"><img src="Footer_Photo/instagram.png" alt="Instagram"></a>
-                    <a href="#"><img src="Footer_Photo/facebook.png" alt="Facebook"></a>
-                    <a href="#"><img src="Footer_Photo/threads.png" alt="Threads"></a>
-                    <a href="#"><img src="Footer_Photo/shopee.png" alt="Shopee"></a>
+              </div>
+            </article>
+            <article class="review-card">
+              <span class="quote-mark" aria-hidden="true">“</span>
+              <blockquote>
+                Kulakan kuku palsu dari China sekarang jauh lebih mudah. Admin
+                Jastipinaja sangat teliti bantu cek pesanan partai besar saya
+                sebelum dikirim. Barang sampai aman dan bebas pusing urus bea
+                cukai!
+              </blockquote>
+              <div class="review-person">
+                <span class="avatar">G</span>
+                <div>
+                  <strong>Gloria</strong><small>Kuku Palsu (Nail Art)</small>
                 </div>
-            </div>
-
-            <div class="footer-col">
-                <h3>E-commerce China</h3>
-                <!-- Pointing to Footer_Photo -->
-                <img src="Footer_Photo/ecommerce.png" alt="Partner E-commerce" class="footer-landscape-img">
-                
-                <h3 class="mt-20">Pembayaran</h3>
-                <!-- Pointing to Footer_Photo -->
-                <img src="Footer_Photo/bank.png" alt="Metode Pembayaran" class="footer-landscape-img">
-            </div>
-
+              </div>
+            </article>
+            <article class="review-card">
+              <span class="quote-mark" aria-hidden="true">“</span>
+              <blockquote>
+                Pelayanan Jastipinaja sangat solutif. Admin selalu bantu
+                merekomendasikan apakah barang elektronik saya lebih baik
+                dikirim via handcarry atau kargo laut. Estimasi waktu tibanya
+                juga selalu on-time, tidak pernah meleset!
+              </blockquote>
+              <div class="review-person">
+                <span class="avatar">J</span>
+                <div>
+                  <strong>Jansen</strong><small>Barang Elektronik</small>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="actions">
+            <a class="text-link" href="testimoni"
+              >Semua cerita & dokumentasi
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" /></svg
+            ></a>
+          </div>
         </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Jastipinaja.cn. All Rights Reserved.</p>
+      </section>
+      <section class="cta-band">
+        <div class="wrap cta-inner">
+          <div>
+            <span class="eyebrow">KAMI SIAP MEMBANTU</span>
+            <h2>Ada barang yang sedang Anda incar?</h2>
+            <p>Kirim link atau foto produknya. Mari mulai dari konsultasi.</p>
+          </div>
+          <a class="button" href="contact?service=checkout"
+            >Konsultasi dengan admin<svg
+              class="icon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14M13 6l6 6-6 6" /></svg
+          ></a>
         </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/"
+            ><span class="brand-mark"
+              ><img
+                src="Others_Photo/logo_notext.png"
+                alt=""
+                width="43"
+                height="43" /></span
+            ><span class="brand-name">Jastipinaja<small>.cn</small></span></a
+          >
+          <p>
+            Belanja, kirim, dan bayar dari China ke Indonesia. Satu tempat untuk
+            kebutuhan jastip Anda.
+          </p>
+          <img
+            class="footer-payments"
+            src="Footer_Photo/bank.png"
+            alt="Metode pembayaran"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <h2>Jelajahi layanan</h2>
+          <div class="footer-list">
+            <a href="checkout">Titip beli & kirim</a
+            ><a href="forwarding">Kirim & forwarding</a
+            ><a href="topup">Top-up RMB & Alipay</a
+            ><a href="testimoni">Testimoni & dokumentasi</a
+            ><a href="faq">Pertanyaan umum</a>
+          </div>
+        </div>
+        <div>
+          <h2>Mari terhubung</h2>
+          <div class="footer-list">
+            <a
+              href="https://wa.me/6285102280001?text=Halo%20Jastipinajacn%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda."
+              >Joshua · +62 851 0228 0001</a
+            ><span>09:00–22:00 · Senin–Minggu</span>
+          </div>
+          <p>
+            Jl. Madrasah No.1a, RT.1/RW.3, Gandaria Selatan, Cilandak, Jakarta
+            Selatan, DKI Jakarta 12420
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom-new">
+        <span>© 2026 Jastipinaja.cn. All rights reserved.</span
+        ><span>China → Indonesia</span>
+      </div>
     </footer>
-
-    <!-- Moved script to the very bottom for optimal loading -->
+    <a
+      class="site-float"
+      href="https://wa.me/6285102280001?text=Halo%20Jastipinajacn%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat di WhatsApp"
+      ><img src="Footer_Photo/whatsapp_logo.png" alt=""
+    /></a>
+    <div class="mobile-contact">
+      <a class="button" href="contact">Konsultasikan kebutuhan Anda →</a>
+    </div>
     <script src="script.js"></script>
-
-</body>
+    <script src="site.js"></script>
+  </body>
 </html>

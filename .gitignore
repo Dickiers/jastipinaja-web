@@ -1,0 +1,4 @@
+.verification/
+/hosting-public/
+/.firebase/
+firebase-debug.log*

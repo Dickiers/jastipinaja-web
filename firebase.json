@@ -1,0 +1,28 @@
+{
+  "hosting": {
+    "public": "hosting-public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "predeploy": ["node tools/build-hosting.cjs"],
+    "headers": [
+      {
+        "regex": ".*",
+        "headers": [
+          { "key": "X-Content-Type-Options", "value": "nosniff" },
+          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+          { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+        ]
+      },
+      {
+        "regex": ".*\\.(jpg|jpeg|png|webp|svg|ico)$",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=86400" }
+        ]
+      }
+    ]
+  },
+  "emulators": {
+    "hosting": { "port": 5000 }
+  }
+}

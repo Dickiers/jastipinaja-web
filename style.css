@@ -697,6 +697,119 @@ body {
   } /* Hide arrows on mobile so users just use dots */
 }
 
+/* Testimonial page */
+.testimoni-page { background: #fff; color: #233247; }
+.testimoni-page .hamburger { border: 0; background: transparent; padding: 8px; }
+.testimoni-page [aria-current="page"] { color: #0056b3; }
+.testimoni-page .proof-hero { background: linear-gradient(135deg, #eaf3ff 0%, #f7fbff 56%, #fff 100%); overflow: hidden; }
+.testimoni-page .proof-hero-inner { max-width: 1180px; min-height: 480px; margin: auto; padding: 64px 30px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 6%; box-sizing: border-box; }
+.testimoni-page .proof-eyebrow { display: inline-block; color: #0056b3; font-size: .78rem; font-weight: 800; letter-spacing: .16em; }
+.testimoni-page .proof-hero h1 { max-width: 680px; margin: 18px 0; color: #123864; font-size: clamp(2.3rem, 4.5vw, 4.5rem); line-height: 1.1; letter-spacing: -.04em; }
+.testimoni-page .proof-hero p { max-width: 540px; color: #50647a; font-size: 1.1rem; line-height: 1.7; }
+.testimoni-page .proof-hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; margin-top: 30px; }
+.testimoni-page .proof-primary-link { display: inline-flex; align-items: center; justify-content: center; gap: 20px; padding: 15px 23px; border-radius: 12px; background: #0056b3; color: #fff; text-decoration: none; font-weight: 700; box-shadow: 0 10px 25px rgba(0,86,179,.17); transition: transform .2s, background .2s; }
+.testimoni-page .proof-primary-link:hover { background: #003d82; transform: translateY(-2px); }
+.testimoni-page .proof-text-link { color: #0056b3; font-weight: 700; text-decoration: none; }
+.testimoni-page .proof-text-link:hover { text-decoration: underline; }
+.testimoni-page .proof-hero-visual { position: relative; min-height: 350px; }
+.testimoni-page .proof-visual-frame { position: absolute; overflow: hidden; padding: 9px; border-radius: 22px; background: #fff; box-shadow: 0 20px 55px rgba(15,57,105,.17); }
+.testimoni-page .proof-visual-frame img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }
+.testimoni-page .proof-visual-back { width: 52%; height: 260px; top: 0; right: 1%; transform: rotate(8deg); }
+.testimoni-page .proof-visual-front { width: 57%; height: 300px; left: 1%; bottom: 0; transform: rotate(-7deg); }
+.testimoni-page .proof-visual-label { position: absolute; z-index: 2; right: 0; bottom: 18px; padding: 11px 16px; background: #fff; border-radius: 100px; box-shadow: 0 8px 24px rgba(15,57,105,.12); color: #31506e; font-size: .78rem; font-weight: 700; }
+.testimoni-page .proof-label-dot { display: inline-block; width: 8px; height: 8px; margin-right: 5px; border-radius: 50%; background: #22b47f; }
+.testimoni-page .proof-section-heading { max-width: 1180px; margin: 0 auto 34px; display: flex; justify-content: space-between; align-items: end; gap: 30px; text-align: left; }
+.testimoni-page #cerita-pelanggan, .testimoni-page #dokumentasi { scroll-margin-top: 80px; }
+.testimoni-page .proof-section-heading h2 { max-width: 600px; margin: 10px 0 0; color: #123864; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.2; letter-spacing: -.025em; }
+.testimoni-page .proof-section-heading p { max-width: 310px; margin: 0; color: #63758a; }
+.testimoni-page .testimonial-section { padding: 72px 30px 66px; background: #f8fbff; overflow: hidden; }
+.testimoni-page .testi-wrapper { display: block; max-width: 1180px; position: relative; }
+.testimoni-page .testi-track-container { max-width: none; overflow: hidden; padding-bottom: 0; }
+.testimoni-page .proof-story-track { position: relative; width: max-content; list-style: none; display: flex; align-items: center; gap: 24px; padding: 28px 0; margin: 0; transition: transform .65s cubic-bezier(.22,.7,.2,1); }
+.testimoni-page .testi-card { flex: 0 0 min(730px, calc(100vw - 180px)); box-sizing: border-box; width: min(730px, calc(100vw - 180px)); height: 330px; min-width: 0; margin: 0; display: flex; opacity: .36; transform: scale(.88); border: 1px solid #e4ecf5; border-radius: 24px; box-shadow: 0 12px 30px rgba(21,62,109,.08); overflow: hidden; transition: opacity .6s ease, transform .6s ease, box-shadow .6s ease; }
+.testimoni-page .testi-card.active { width: min(730px, calc(100vw - 180px)); height: 330px; opacity: 1; transform: scale(1); box-shadow: 0 24px 50px rgba(21,62,109,.16); }
+.testimoni-page .proof-carousel-arrow { position: absolute; top: 50%; z-index: 10; transform: translateY(-50%); width: 52px; height: 52px; border: 2px solid #0056b3; border-radius: 50%; background: #fff; color: #0056b3; font-size: 1.25rem; cursor: pointer; box-shadow: 0 8px 24px rgba(21,62,109,.16); transition: background .2s, color .2s, transform .2s; }
+.testimoni-page .proof-carousel-arrow:hover { background: #0056b3; color: #fff; transform: translateY(-50%) scale(1.06); }
+.testimoni-page .proof-carousel-prev { left: 10px; }
+.testimoni-page .proof-carousel-next { right: 10px; }
+.testimoni-page .proof-carousel-meta { display: flex; flex-direction: column; align-items: center; gap: 13px; margin: 8px auto 0; color: #4e6580; font-size: .87rem; font-weight: 700; }
+.testimoni-page .proof-carousel-dots { display: flex; justify-content: center; gap: 8px; }
+.testimoni-page .proof-carousel-dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 20px; background: #b8cee7; cursor: pointer; transition: width .3s, background .3s; }
+.testimoni-page .proof-carousel-dots button.is-active { width: 24px; background: #0056b3; }
+.testimoni-page .testi-bg-image { position: absolute; top: 0; right: 0; width: 48%; height: 100%; border-radius: 0 24px 24px 0; background-size: contain; background-repeat: no-repeat; background-position: center; -webkit-mask-image: linear-gradient(to right, transparent, #000 28%); mask-image: linear-gradient(to right, transparent, #000 28%); }
+.testimoni-page .testi-content { width: 64%; box-sizing: border-box; flex: none; display: flex; flex-direction: column; justify-content: center; padding: 30px 35px; text-align: left; }
+.testimoni-page .cust-name { font-size: 1.35rem; color: #123864; }
+.testimoni-page .item-name { margin-bottom: 17px; font-size: .87rem; }
+.testimoni-page .testi-text { margin: 0; color: #405168; font-size: .95rem; font-style: normal; line-height: 1.65; }
+.testimoni-page .gallery-section { padding: 86px 30px 100px; }
+.testimoni-page .proof-gallery-viewport { max-width: 1200px; margin: 0 auto; overflow: hidden; position: relative; border-radius: 16px; transition: height .5s cubic-bezier(.2,.7,.2,1); scroll-margin-top: 90px; }
+.testimoni-page .proof-gallery-viewport.is-expanded { overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: thin; scrollbar-color: #a9c4e3 #eef5fc; background: #f9fbff; box-shadow: 0 10px 35px rgba(21,62,109,.1); }
+.testimoni-page .proof-gallery-viewport:focus-visible { outline: 3px solid #78b8ff; outline-offset: 3px; }
+.testimoni-page .proof-gallery-viewport::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 50px; pointer-events: none; background: linear-gradient(to bottom, transparent, rgba(255,255,255,.95)); opacity: 1; transition: opacity .4s; }
+.testimoni-page .proof-gallery-viewport.is-expanded::after { opacity: 0; }
+.testimoni-page .proof-filter-bar { max-width: 1180px; display: flex; flex-wrap: wrap; gap: 10px; margin: 0 auto 16px; }
+.testimoni-page .proof-filter { padding: 10px 17px; border: 1px solid #d7e3f0; border-radius: 100px; background: #fff; color: #31506e; font: inherit; font-size: .9rem; font-weight: 700; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+.testimoni-page .proof-filter:hover, .testimoni-page .proof-filter.is-active { background: #0056b3; border-color: #0056b3; color: #fff; }
+.testimoni-page .proof-gallery-count { max-width: 1180px; margin: 0 auto 22px; color: #63758a; font-size: .87rem; }
+.testimoni-page .gallery-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.testimoni-page .gallery-item { min-width: 0; padding: 7px; border-radius: 16px; background: #fff; border-color: #e4ecf5; box-shadow: 0 5px 18px rgba(21,62,109,.05); scroll-margin-top: 80px; }
+.testimoni-page .gallery-item[hidden] { display: none; }
+.testimoni-page .gallery-item img { border-radius: 11px; }
+.testimoni-page .gallery-tags-container { justify-content: flex-start; padding: 0 5px 5px; }
+.testimoni-page .gallery-tag { border: 0; background: #edf5ff; font-size: .7rem; }
+.testimoni-page .proof-load-more { display: block; margin: 35px auto 0; padding: 14px 23px; border: 1px solid #0056b3; border-radius: 12px; background: #fff; color: #0056b3; font: inherit; font-weight: 700; cursor: pointer; }
+.testimoni-page .proof-load-more:hover { background: #edf5ff; }
+.testimoni-page .proof-load-more[hidden] { display: none; }
+.testimoni-page .lightbox-modal { box-sizing: border-box; padding: 55px 65px 25px; overflow-y: auto; }
+.testimoni-page .lightbox-content { max-height: calc(100vh - 145px); }
+.testimoni-page .lightbox-close { border: 0; background: transparent; line-height: 1; }
+.testimoni-page .lightbox-prev, .testimoni-page .lightbox-next { border-radius: 50%; width: 48px; height: 48px; padding: 0; }
+.testimoni-page .proof-cta { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 55px max(30px, calc((100vw - 1180px) / 2)); background: #eaf3ff; }
+.testimoni-page .proof-cta h2 { margin: 9px 0; color: #123864; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.2; }
+.testimoni-page .proof-cta p { margin: 0; color: #50647a; }
+.testimoni-page .proof-cta .proof-primary-link { flex: none; }
+.testimoni-page :is(a, button):focus-visible { outline: 3px solid #78b8ff; outline-offset: 3px; }
+@media (max-width: 768px) {
+  .testimoni-page .proof-hero-inner { grid-template-columns: 1fr; gap: 26px; min-height: 0; padding: 54px 20px 34px; }
+  .testimoni-page .proof-hero h1 { font-size: clamp(2.2rem, 9vw, 3.4rem); }
+  .testimoni-page .proof-hero p { font-size: 1rem; }
+  .testimoni-page .proof-hero-visual { min-height: 300px; max-width: 440px; width: 100%; margin: auto; }
+  .testimoni-page .proof-visual-back { height: 210px; }
+  .testimoni-page .proof-visual-front { height: 245px; }
+  .testimoni-page .proof-section-heading { display: block; margin-bottom: 25px; }
+  .testimoni-page .proof-section-heading p { max-width: 560px; margin-top: 12px; }
+  .testimoni-page .testimonial-section, .testimoni-page .gallery-section { padding: 65px 20px; }
+  .testimoni-page .proof-story-track { align-items: stretch; gap: 14px; padding: 18px 0; }
+  .testimoni-page .testi-card, .testimoni-page .testi-card.active { flex-basis: calc(100vw - 86px); width: calc(100vw - 86px); height: auto !important; min-height: 355px; margin: 0; display: flex !important; flex-direction: column; }
+  .testimoni-page .testi-bg-image { position: relative; top: auto; right: auto; width: 100%; height: 135px !important; border-radius: 24px 24px 0 0; -webkit-mask-image: linear-gradient(to bottom, #000 35%, transparent); mask-image: linear-gradient(to bottom, #000 35%, transparent); }
+  .testimoni-page .testi-content { width: 100%; margin: -10px 0 0; padding: 16px 23px 26px !important; }
+  .testimoni-page .proof-carousel-arrow { width: 42px; height: 42px; font-size: 1rem; }
+  .testimoni-page .proof-carousel-prev { left: 0; }
+  .testimoni-page .proof-carousel-next { right: 0; }
+  .testimoni-page .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px; }
+  .testimoni-page .lightbox-modal { padding: 72px 12px 20px; }
+  .testimoni-page .lightbox-content { max-width: calc(100% - 70px); max-height: calc(100vh - 180px); }
+  .testimoni-page .lightbox-close { top: 17px; right: 20px; }
+  .testimoni-page .lightbox-prev { left: 7px; }
+  .testimoni-page .lightbox-next { right: 7px; }
+  .testimoni-page .lightbox-prev, .testimoni-page .lightbox-next { width: 36px; height: 36px; font-size: 1.2rem; }
+  .testimoni-page .proof-cta { display: block; padding: 45px 20px; }
+  .testimoni-page .proof-cta .proof-primary-link { margin-top: 22px; }
+}
+@media (max-width: 420px) {
+  .testimoni-page .proof-hero-actions { align-items: flex-start; flex-direction: column; gap: 17px; }
+  .testimoni-page .proof-hero-visual { min-height: 255px; }
+  .testimoni-page .proof-visual-back { height: 170px; }
+  .testimoni-page .proof-visual-front { height: 210px; }
+  .testimoni-page .proof-visual-label { right: 0; bottom: 7px; font-size: .68rem; }
+  .testimoni-page .proof-filter-bar { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px; }
+  .testimoni-page .proof-filter { flex: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .testimoni-page .proof-gallery-viewport { transition: none; }
+  .testimoni-page .proof-story-track, .testimoni-page .testi-card { transition: none; }
+}
+
 /* --- THE MODERN FADING CARDS --- */
 .services-container {
   display: flex;

@@ -1,217 +1,449 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jasa Kirim & Forwarding | Jastipinaja.cn</title>
-    <!-- Pointing to Others_Photo -->
-    <link rel="icon" type="image/png" href="Others_Photo/logo_notext.png">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="/">
-                <!-- Pointing to Others_Photo -->
-                <img src="Others_Photo/logo.png" alt="Jastipinaja Logo" class="nav-logo">
-            </a>
-        </div>
-        
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        
-        <ul class="nav-links">
-            <li><a href="/">Home Page</a></li>
-            <li class="dropdown">
-                <a href="/#services" class="dropbtn">Our Services ▾</a>
-                <div class="dropdown-content">
-                    <a href="checkout">Jasa Titip Beli & Kirim (All-in)</a>
-                    <a href="forwarding">Jasa Kirim & Forwarding</a>
-                    <a href="topup">Jasa Top-up RMB & Alipay</a>
-                </div>
-            </li>
-            <li><a href="faq">FAQ</a></li>
-            <li><a href="testimoni">Testimoni</a></li>
-            <li><a href="contact" class="nav-contact-btn">Contact Us</a></li>
-        </ul>
-    </nav>
-    
-    <!-- HERO SECTION -->
-    <header class="hero" style="padding: 60px 20px;">
-        <h1>Jasa Kirim & Forwarding</h1>
-        <p>Solusi pengiriman aman dari China ke Indonesia, All-In Tax & Bea Cukai.</p>
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Pengiriman China ke Indonesia melalui handcarry, air freight, dan sea cargo. Bandingkan tarif dan hitung berat volume."
+    />
+    <meta name="theme-color" content="#0056b3" />
+    <title>Kirim & forwarding | Jastipinaja.cn</title>
+    <link rel="icon" href="Others_Photo/logo_notext.png" type="image/png" />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body class="site-page page-forwarding">
+    <a class="skip-link" href="#main">Langsung ke konten</a>
+    <header class="site-header">
+      <div class="nav-inner">
+        <a class="brand" href="/"
+          ><span class="brand-mark"
+            ><img
+              src="Others_Photo/logo_notext.png"
+              alt=""
+              width="43"
+              height="43" /></span
+          ><span class="brand-name">Jastipinaja<small>.cn</small></span></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+          aria-controls="site-menu"
+        >
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <nav class="site-nav" id="site-menu" aria-label="Navigasi utama">
+          <a href="/">Beranda</a>
+          <div class="services-menu">
+            <button
+              type="button"
+              class="services-toggle is-current"
+              aria-expanded="false"
+              aria-controls="service-menu"
+            >
+              Layanan
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <div class="service-popover" id="service-menu" hidden>
+              <a href="checkout"
+                ><strong>Titip beli & kirim</strong
+                ><span>Belanja dari China, kami urus semuanya.</span></a
+              ><a href="forwarding" aria-current="page"
+                ><strong>Kirim & forwarding</strong
+                ><span>Sudah belanja? Kami bantu pengiriman.</span></a
+              ><a href="topup"
+                ><strong>Top-up RMB & Alipay</strong
+                ><span>Isi saldo atau bayar supplier China.</span></a
+              >
+            </div>
+          </div>
+          <a href="testimoni">Testimoni</a><a href="faq">FAQ</a
+          ><a class="button" href="contact"
+            >Hubungi kami
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" /></svg
+          ></a>
+        </nav>
+      </div>
     </header>
-
-    <!-- CARA ORDER SECTION -->
-    <section class="checkout-section">
-        <h2 class="section-title">Cara Order</h2>
-        <div class="roadmap-container">
-            
-            <div class="roadmap-step">
-                <div class="roadmap-circle">1</div>
-                <div class="roadmap-content">
-                    <h3>Pilih Layanan & Minta Alamat</h3>
-                    <p>Tentukan mau kirim via apa (Handcarry / Air / Sea). Admin akan memberikan <strong>Alamat China + Kode Marking</strong> khusus untuk paket Kakak.</p>
-                </div>
+    <main id="main">
+      <header class="service-hero">
+        <div class="wrap">
+          <div class="breadcrumbs">
+            <a href="/">Beranda</a><span>/</span><span>Kirim & forwarding</span>
+          </div>
+          <div class="service-hero-grid">
+            <div>
+              <span class="eyebrow">JASA PENGIRIMAN</span>
+              <h1>Anda belanja sendiri.<br />Kami bantu kirimnya.</h1>
+              <p class="lead">
+                Kirim barang ke alamat China yang diberikan admin. Kami urus
+                perjalanan ke Indonesia melalui handcarry, air freight, atau sea
+                cargo.
+              </p>
+              <div class="actions">
+                <a class="button" href="#pengiriman"
+                  >Bandingkan pengiriman<svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6" /></svg></a
+                ><a class="button secondary" href="contact?service=forwarding"
+                  >Minta alamat China<svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14M13 6l6 6-6 6" /></svg
+                ></a>
+              </div>
             </div>
-
-            <div class="roadmap-step">
-                <div class="roadmap-circle">2</div>
-                <div class="roadmap-content">
-                    <h3>Kirim Barang</h3>
-                    <p>Silakan kirim barang ke alamat yang kami berikan.</p>
-                    <span class="warning-tag">⚠️ Wajib cantumkan Kode Marking di paket agar tidak tertukar/hilang.</span>
-                </div>
-            </div>
-
-            <div class="roadmap-step">
-                <div class="roadmap-circle">3</div>
-                <div class="roadmap-content">
-                    <h3>Update Resi</h3>
-                    <p>Setelah barang dikirim, infokan Nomor Resi China ke admin agar kami bisa bantu tracking.</p>
-                </div>
-            </div>
-
-            <div class="roadmap-step">
-                <div class="roadmap-circle">4</div>
-                <div class="roadmap-content">
-                    <h3>Barang Sampai & Bayar</h3>
-                    <p>Setelah barang tiba di Indonesia, kami akan timbang/ukur ulang. Lakukan pembayaran ongkir, lalu barang dikirim ke alamat rumah Kakak via kurir lokal.</p>
-                </div>
-            </div>
-            
+            <aside class="service-overview">
+              <span class="icon-tile"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m22 2-7 20-4-9-9-4 20-7ZM11 13l6-6" /></svg
+              ></span>
+              <div class="overview-label">UNTUK BELANJA MANDIRI</div>
+              <h2>Sudah punya pesanan?</h2>
+              <ul class="check-list">
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6" /></svg
+                  ><span>Alamat China + kode marking</span>
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6" /></svg
+                  ><span>Pilih metode kirim sesuai kebutuhan</span>
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6" /></svg
+                  ><span>Ongkir all-in pajak & bea cukai</span>
+                </li>
+              </ul>
+            </aside>
+          </div>
         </div>
-    </section>
-
-    <!-- PRICING SECTION -->
-    <section class="pricing-section">
-        <h2 class="section-title">Pilihan & Tarif Pengiriman</h2>
-        <div class="pricing-grid">
-            
-            <div class="price-card">
-                <h4>Jastip Handcarry 🧳</h4>
-                <p style="color: #666; font-size: 0.9rem;">Via Bagasi Personal</p>
-                <div class="price-value">Rp 300.000 <span style="font-size: 1rem;">/ Kg</span></div>
-                <p><strong>Estimasi:</strong> 2-5 Hari Sampai</p>
-                <hr style="border: none; border-top: 1px solid #eee; margin: 15px 0;">
-                <p style="font-size: 0.9rem;">Barang dikirim ke alamat Student/Jastiper kami, lalu dibawa via bagasi penerbangan.</p>
-            </div>
-
-            <div class="price-card featured">
-                <h4>Air Freight ✈️</h4>
-                <p style="color: #666; font-size: 0.9rem;">Cargo (Via Gudang)</p>
-                <div class="price-value">Rp 220.000 <span style="font-size: 1rem;">/ Kg</span></div>
-                <p><strong>Estimasi:</strong> 5-10 Hari Sampai</p>
-                <hr style="border: none; border-top: 1px solid #eee; margin: 15px 0;">
-                <p style="font-size: 0.9rem;">Barang dikirim ke Gudang China, lalu diterbangkan ke Indo. All-In Tax, terima beres.</p>
-            </div>
-
-            <div class="price-card">
-                <h4>Sea Cargo 🛳️</h4>
-                <p style="color: #666; font-size: 0.9rem;">Cargo (Via Gudang)</p>
-                <div class="price-value">Rp 120.000 <span style="font-size: 1rem;">/ Kg</span></div>
-                <p><strong>Estimasi:</strong> 3-5 Minggu Sampai</p>
-                <hr style="border: none; border-top: 1px solid #eee; margin: 15px 0;">
-                <p style="font-size: 0.9rem;">Pilihan paling hemat untuk barang besar/berat. All-In Tax, terima beres.</p>
-            </div>
-
+      </header>
+      <nav class="page-tabs" aria-label="Bagian halaman">
+        <div class="wrap">
+          <a href="#pengiriman">Pilihan pengiriman</a
+          ><a href="#cara-order">Cara kirim</a
+          ><a href="#berat-volume">Berat & volume</a>
         </div>
-    </section>
-
-    <!-- VOLUME RULES SECTION -->
-    <section style="padding: 0 20px 60px;">
-        <div class="volume-rules-card">
-            <h3>❗️ Ketentuan Berat & Volume</h3>
-            <p>Berat yang ditagihkan adalah yang <strong>TERBESAR</strong> antara Berat Aktual Timbangan (Kg) dibandingkan dengan Berat Volume (Dimensi).</p>
-            
-            <div class="volume-formulas">
-                <div class="formula-box">
-                    <strong>Jastip Handcarry</strong>
-                    <p>(Panjang x Lebar x Tinggi) ÷ 2.000</p>
-                </div>
-                <div class="formula-box">
-                    <strong>Cargo (Air / Sea)</strong>
-                    <p>(Panjang x Lebar x Tinggi) ÷ 4.000</p>
-                </div>
+      </nav>
+      <section class="section" id="pengiriman">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">PILIHAN PENGIRIMAN</span>
+              <h2>Cepat atau hemat. Pilih sesuai kebutuhan.</h2>
             </div>
-            <p style="font-size: 0.85rem; color: #666; margin-top: 15px;">*Dimensi dihitung dalam satuan Centimeter (cm).</p>
+            <p>
+              Tarif forwarding berbeda dari layanan titip beli. Seluruh opsi
+              berikut sudah termasuk pajak dan bea cukai.
+            </p>
+          </div>
+          <div class="price-grid">
+            <article class="pricing-panel">
+              <span class="icon-tile"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 7h14l2 14H3L5 7ZM8 7V5a4 4 0 0 1 8 0v2" /></svg
+              ></span>
+              <h3>Handcarry</h3>
+              <div class="price">Rp 300.000 <small>/kg</small></div>
+              <span class="price-tag">2–5 hari</span>
+              <p>Via bagasi personal</p>
+              <p class="price-description">
+                Dikirim ke alamat student/jastiper kami, lalu dibawa melalui
+                bagasi penerbangan.
+              </p>
+            </article>
+            <article class="pricing-panel emphasis">
+              <span class="icon-tile"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m22 2-7 20-4-9-9-4 20-7ZM11 13l6-6" /></svg
+              ></span>
+              <h3>Air freight</h3>
+              <div class="price">Rp 220.000 <small>/kg</small></div>
+              <span class="price-tag">5–10 hari</span>
+              <p>Kargo udara</p>
+              <p class="price-description">
+                Dikirim ke gudang China, lalu diterbangkan ke Indonesia.
+              </p>
+            </article>
+            <article class="pricing-panel">
+              <span class="icon-tile"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M4 17 2 12l10-4 10 4-2 5M6 10V5h12v5M10 5V2h4v3M2 21c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"
+                  /></svg
+              ></span>
+              <h3>Sea cargo</h3>
+              <div class="price">Rp 120.000 <small>/kg</small></div>
+              <span class="price-tag">3–5 minggu</span>
+              <p>Kargo laut</p>
+              <p class="price-description">
+                Pilihan hemat untuk barang besar atau berat melalui gudang
+                China.
+              </p>
+            </article>
+          </div>
+          <div class="note">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 11v6M12 7h.01" />
+            </svg>
+            <p>
+              Estimasi waktu bergantung pada metode pengiriman. Admin membantu
+              memilih layanan berdasarkan jenis barang Anda.
+            </p>
+          </div>
         </div>
-    </section>
-
-    <!-- CTA SECTION -->
-    <section id="contact" class="cta-section" style="background-color: #fff; border-top: 1px solid #eee;">
-        <h2>Siap Mengirim Barang?</h2>
-        <p>Chat admin untuk konsultasi barang kiriman Anda.</p>
-        <a href="contact" class="whatsapp-btn">Chat Admin Sekarang</a>
-    </section>
-
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/6285102280001?text=Halo%20Jastipinajacn,%20saya%20ingin%20konsultasi%20pengiriman%20barang%20dari%20China" class="floating-wa-btn" target="_blank">
-        <img src="Footer_Photo/whatsapp_logo.png" alt="Chat WhatsApp">
-    </a>
-
-    <!-- FOOTER -->
-    <footer class="main-footer">
-        <div class="footer-container">
-            
-            <div class="footer-col">
-                <h3>Layanan Kami</h3>
-                <ul class="footer-links">
-                    <li><a href="checkout">Jasa Titip Beli & Kirim (All-in) </a></li>
-                    <li><a href="forwarding">Jasa Kirim & Forwarding</a></li>
-                    <li><a href="topup">Jasa Top-up RMB & Alipay</a></li>
-                </ul>
-                <h3 class="mt-20">Jam Operasional</h3>
-                <p>🕒 09:00 - 22:00 (Senin - Minggu)</p>
+      </section>
+      <section class="section" id="cara-order">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">CARA KIRIM</span>
+              <h2>Dari alamat China ke alamat Anda.</h2>
             </div>
-
-            <div class="footer-col">
-                <h3>Hubungi Kami</h3>
-                <p class="footer-address">📍 Jl. Madrasah No.1a, RT.1/RW.3, Gandaria Sel., Kec. Cilandak, Kota Jakarta Selatan, DKI Jakarta 12420</p>
-                
-                <div class="footer-contact-links">
-                    <a href="https://wa.me/6285102280001" target="_blank">
-                        <!-- Pointing to Footer_Photo -->
-                        <img src="Footer_Photo/whatsapp_logo.png" alt="WA" class="small-icon"> Joshua (+62 851 0228 0001)
-                    </a>
-                    <a href="#" target="_blank">
-                        <!-- Pointing to Footer_Photo -->
-                        <img src="Footer_Photo/group.png" alt="WA Group" class="small-icon"> Whatsapp Group Jastipinajacn
-                    </a>
-                </div>
-
-                <h3 class="mt-20">Ikuti Kami</h3>
-                <div class="social-icons">
-                    <!-- Pointing to Footer_Photo -->
-                    <a href="#"><img src="Footer_Photo/instagram.png" alt="Instagram"></a>
-                    <a href="#"><img src="Footer_Photo/facebook.png" alt="Facebook"></a>
-                    <a href="#"><img src="Footer_Photo/threads.png" alt="Threads"></a>
-                    <a href="#"><img src="Footer_Photo/shopee.png" alt="Shopee"></a>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <h3>E-commerce China</h3>
-                <!-- Pointing to Footer_Photo -->
-                <img src="Footer_Photo/ecommerce.png" alt="Partner E-commerce" class="footer-landscape-img">
-                
-                <h3 class="mt-20">Pembayaran</h3>
-                <!-- Pointing to Footer_Photo -->
-                <img src="Footer_Photo/bank.png" alt="Metode Pembayaran" class="footer-landscape-img">
-            </div>
-
+          </div>
+          <div class="step-grid">
+            <article class="step">
+              <span class="step-num">01</span>
+              <div>
+                <h3>Minta alamat & marking</h3>
+                <p>
+                  Pilih metode kirim. Admin memberikan alamat China dan kode
+                  marking khusus paket Anda.
+                </p>
+              </div>
+            </article>
+            <article class="step">
+              <span class="step-num">02</span>
+              <div>
+                <h3>Kirim barang</h3>
+                <p>
+                  Cantumkan kode marking pada paket agar dapat dikenali saat
+                  diterima.
+                </p>
+              </div>
+            </article>
+            <article class="step">
+              <span class="step-num">03</span>
+              <div>
+                <h3>Bagikan resi China</h3>
+                <p>
+                  Kirim nomor resi ke admin agar kami dapat membantu tracking
+                  barang.
+                </p>
+              </div>
+            </article>
+            <article class="step">
+              <span class="step-num">04</span>
+              <div>
+                <h3>Bayar & terima</h3>
+                <p>
+                  Saat tiba di Indonesia, barang ditimbang atau diukur ulang.
+                  Bayar ongkir, lalu barang dikirim via kurir lokal.
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Jastipinaja.cn. All Rights Reserved.</p>
+      </section>
+      <section class="section wash" id="berat-volume">
+        <div class="wrap calculator-layout">
+          <div class="calculator-intro">
+            <span class="eyebrow">PAHAMI BERAT TAGIHAN</span>
+            <h2>Bukan hanya berat di timbangan.</h2>
+            <p>
+              Berat yang ditagihkan adalah yang lebih besar antara berat aktual
+              dan berat volume. Masukkan dimensi dalam sentimeter untuk melihat
+              perbandingannya.
+            </p>
+            <div class="formula">
+              Handcarry: panjang × lebar × tinggi ÷ 2.000<br />Kargo air / sea:
+              panjang × lebar × tinggi ÷ 4.000
+            </div>
+          </div>
+          <div class="calc-shell dimensions">
+            <h3>Perkiraan berat & ongkir</h3>
+            <p class="calc-note">Isi berat aktual dan dimensi paket.</p>
+            <div class="field-row dimension-inputs">
+              <div class="field">
+                <label for="volume-length">Panjang (cm)</label
+                ><input
+                  type="number"
+                  id="volume-length"
+                  min="0"
+                  step="any"
+                  inputmode="decimal"
+                  placeholder="30"
+                />
+              </div>
+              <div class="field">
+                <label for="volume-width">Lebar (cm)</label
+                ><input
+                  type="number"
+                  id="volume-width"
+                  min="0"
+                  step="any"
+                  inputmode="decimal"
+                  placeholder="20"
+                />
+              </div>
+              <div class="field">
+                <label for="volume-height">Tinggi (cm)</label
+                ><input
+                  type="number"
+                  id="volume-height"
+                  min="0"
+                  step="any"
+                  inputmode="decimal"
+                  placeholder="10"
+                />
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="volume-actual">Berat aktual (kg)</label
+                ><input
+                  type="number"
+                  id="volume-actual"
+                  min="0"
+                  step="any"
+                  inputmode="decimal"
+                  placeholder="2"
+                />
+              </div>
+              <div class="field">
+                <label for="volume-method">Metode kirim</label
+                ><select id="volume-method">
+                  <option value="handcarry">Handcarry</option>
+                  <option value="air">Air freight</option>
+                  <option value="sea">Sea cargo</option>
+                </select>
+              </div>
+            </div>
+            <div class="dimension-summary">
+              <div>
+                <span>Berat aktual</span
+                ><strong id="volume-actual-result">0 kg</strong>
+              </div>
+              <div>
+                <span>Berat volume</span
+                ><strong id="volume-result">0 kg</strong>
+              </div>
+              <div>
+                <span>Berat tagihan</span
+                ><strong id="volume-billable">0 kg</strong>
+              </div>
+            </div>
+            <div class="calc-total" role="status" aria-live="polite">
+              <span>Estimasi ongkir forwarding</span
+              ><strong id="volume-cost">Rp 0</strong>
+            </div>
+            <p class="calc-note">
+              Perkiraan sebelum timbang dan ukur ulang oleh admin. Tarif
+              mengikuti pilihan pengiriman di atas.
+            </p>
+          </div>
         </div>
+      </section>
+      <section class="cta-band">
+        <div class="wrap cta-inner">
+          <div>
+            <span class="eyebrow">KAMI SIAP MEMBANTU</span>
+            <h2>Siapkan perjalanan paket Anda.</h2>
+            <p>
+              Konsultasikan jenis barang dan dapatkan alamat China dari admin.
+            </p>
+          </div>
+          <a class="button" href="contact?service=forwarding"
+            >Konsultasi dengan admin<svg
+              class="icon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14M13 6l6 6-6 6" /></svg
+          ></a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/"
+            ><span class="brand-mark"
+              ><img
+                src="Others_Photo/logo_notext.png"
+                alt=""
+                width="43"
+                height="43" /></span
+            ><span class="brand-name">Jastipinaja<small>.cn</small></span></a
+          >
+          <p>
+            Belanja, kirim, dan bayar dari China ke Indonesia. Satu tempat untuk
+            kebutuhan jastip Anda.
+          </p>
+          <img
+            class="footer-payments"
+            src="Footer_Photo/bank.png"
+            alt="Metode pembayaran"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <h2>Jelajahi layanan</h2>
+          <div class="footer-list">
+            <a href="checkout">Titip beli & kirim</a
+            ><a href="forwarding">Kirim & forwarding</a
+            ><a href="topup">Top-up RMB & Alipay</a
+            ><a href="testimoni">Testimoni & dokumentasi</a
+            ><a href="faq">Pertanyaan umum</a>
+          </div>
+        </div>
+        <div>
+          <h2>Mari terhubung</h2>
+          <div class="footer-list">
+            <a
+              href="https://wa.me/6285102280001?text=Halo%20Jastipinajacn%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda."
+              >Joshua · +62 851 0228 0001</a
+            ><span>09:00–22:00 · Senin–Minggu</span>
+          </div>
+          <p>
+            Jl. Madrasah No.1a, RT.1/RW.3, Gandaria Selatan, Cilandak, Jakarta
+            Selatan, DKI Jakarta 12420
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom-new">
+        <span>© 2026 Jastipinaja.cn. All rights reserved.</span
+        ><span>China → Indonesia</span>
+      </div>
     </footer>
-
+    <a
+      class="site-float"
+      href="https://wa.me/6285102280001?text=Halo%20Jastipinajacn%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20Anda."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat di WhatsApp"
+      ><img src="Footer_Photo/whatsapp_logo.png" alt=""
+    /></a>
+    <div class="mobile-contact">
+      <a class="button" href="contact">Konsultasikan kebutuhan Anda →</a>
+    </div>
     <script src="script.js"></script>
-</body>
+    <script src="site.js"></script>
+  </body>
 </html>
